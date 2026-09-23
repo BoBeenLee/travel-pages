@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#EFF0EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121A1F" media="(prefers-color-scheme: dark)">
+<meta name="description" content="아오모리에서 버스 타는 법. 중앙문으로 타고 앞문으로 내린다. 정리권과 IC카드, 노선별 요금 내는 법.">
+<meta name="robots" content="noindex,nofollow">
+<title>아오모리 버스 타는 법</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  :root {
+    color-scheme:light dark;
+    --paper:#EFF0EA; --panel:#F7F8F3; --line:#C8CCC1;
+    --ink:#1C2831; --ink2:#5D6C75; --ink3:#8C9AA2;
+    --d1:#24707E; --d2:#B4551E; --d3:#486B3D;
+    --tbd:#9A6B1E; --tbdbg:#F2E8D4; --ok:#3F6B4A; --okbg:#E2EAE0;
+    --body:#DBDDD2; --glass:#BFCDD6;
+    --fs:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+    --fm:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --fj:"Noto Sans JP","Hiragino Sans","Yu Gothic",var(--fs);
+  }
+  @media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+      --paper:#121A1F; --panel:#18222A; --line:#2C3A43;
+      --ink:#E6E9E5; --ink2:#93A2AB; --ink3:#6B7A83;
+      --d1:#58A9BA; --d2:#E3853F; --d3:#86B276;
+      --tbd:#DFB765; --tbdbg:#2E2717; --ok:#8FBE97; --okbg:#1E2E24;
+      --body:#243039; --glass:#0C1419;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#121A1F; --panel:#18222A; --line:#2C3A43;
+    --ink:#E6E9E5; --ink2:#93A2AB; --ink3:#6B7A83;
+    --d1:#58A9BA; --d2:#E3853F; --d3:#86B276;
+    --tbd:#DFB765; --tbdbg:#2E2717; --ok:#8FBE97; --okbg:#1E2E24;
+    --body:#243039; --glass:#0C1419;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--fs);
+    line-height:1.6; -webkit-font-smoothing:antialiased; }
+  img { max-width:100%; }
+  .wrap { max-width:840px; margin:0 auto; padding:28px 20px 56px; }
+  .top { padding-bottom:16px; border-bottom:2px solid var(--ink); }
+  .eyebrow { font-family:var(--fm); font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink2); margin:0 0 4px; }
+  h1 { font-size:clamp(25px,3.4vw,36px); font-weight:700; letter-spacing:-.02em;
+    margin:0; text-wrap:balance; }
+  .lede { margin:10px 0 0; font-size:14.5px; color:var(--ink2); text-wrap:pretty;
+    max-width:60ch; }
+  .back { display:inline-block; margin-top:13px; font-family:var(--fm);
+    font-size:12px; color:var(--d1); text-underline-offset:3px; }
+  .sec { margin-top:34px; }
+  .sechead { display:flex; align-items:baseline; gap:10px 14px; flex-wrap:wrap;
+    border-bottom:1px solid var(--line); padding-bottom:7px; margin-bottom:16px; }
+  .sechead h2 { font-size:19px; margin:0; font-weight:600; letter-spacing:-.01em; }
+  .sechead .when { font-family:var(--fm); font-size:11px; letter-spacing:.08em;
+    color:var(--paper); background:var(--d1); padding:2px 8px; margin-left:auto; }
+  .sechead .when.d2 { background:var(--d2); }
+  h3 { font-size:15px; margin:24px 0 10px; font-weight:600; }
+  p { margin:0 0 12px; text-wrap:pretty; max-width:62ch; }
+  .jpn { font-family:var(--fj); font-weight:500; }
+  .ko { color:var(--ink2); }
+  .diag { background:var(--panel); border:1px solid var(--line); padding:14px;
+    margin:0 0 18px; overflow-x:auto; }
+  .diag svg { display:block; width:100%; min-width:520px; height:auto; }
+  .diag figcaption { font-family:var(--fm); font-size:11.5px; color:var(--ink3);
+    margin-top:10px; padding-top:9px; border-top:1px solid var(--line); }
+  .steps { list-style:none; counter-reset:s; margin:0 0 18px; padding:0;
+    display:flex; flex-direction:column; gap:12px; }
+  .steps li { counter-increment:s; position:relative; padding-left:38px;
+    font-size:14px; text-wrap:pretty; }
+  .steps li::before { content:counter(s); position:absolute; left:0; top:1px;
+    width:24px; height:24px; display:grid; place-items:center;
+    font-family:var(--fm); font-size:12px; font-weight:600;
+    color:var(--paper); background:var(--ink); }
+  .steps b { font-weight:600; }
+  .steps .sub { display:block; color:var(--ink2); font-size:12.5px; margin-top:2px; }
+  .note { border-left:3px solid var(--tbd); background:var(--tbdbg);
+    padding:12px 15px; margin:0 0 18px; font-size:13.5px; text-wrap:pretty; }
+  .note.ok { border-left-color:var(--ok); background:var(--okbg); }
+  .note p:last-child { margin-bottom:0; }
+  .tw { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:13.5px; margin:0 0 18px; }
+  th, td { text-align:left; padding:9px 12px 9px 0; border-bottom:1px solid var(--line);
+    vertical-align:top; }
+  th { font-family:var(--fm); font-size:11px; letter-spacing:.08em; color:var(--ink3);
+    text-transform:uppercase; font-weight:500; white-space:nowrap; }
+  td.num { font-family:var(--fm); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  a { color:var(--d1); text-underline-offset:3px; }
+  a:focus-visible { outline:2px solid var(--d1); outline-offset:2px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:12px; margin:0 0 18px; }
+  .card { background:var(--panel); border:1px solid var(--line); padding:13px 15px; }
+  .card h4 { font-size:13.5px; margin:0 0 6px; font-weight:600; }
+  .card p { font-size:12.5px; color:var(--ink2); margin:0; }
+  footer { margin-top:36px; padding-top:14px; border-top:1px solid var(--line);
+    font-size:12px; color:var(--ink3); text-wrap:pretty; }
+  footer code { font-family:var(--fm); font-size:11.5px; color:var(--ink2); }
+  .ph { display:block; width:100%; height:auto; border:1px solid var(--line);
+    background:var(--panel); }
+  .real { background:var(--panel); border:1px solid var(--line); padding:14px;
+    margin:0 0 18px; }
+  .real .row { display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr));
+    gap:16px; align-items:start; }
+  .real figure { margin:0; display:flex; flex-direction:column; }
+  .real figure img { aspect-ratio:4/3; object-fit:contain;
+    background:var(--paper); }
+  .real figcaption { margin-top:8px; font-size:12px; color:var(--ink2);
+    text-wrap:pretty; }
+  .real figcaption b { color:var(--ink); }
+  .steps figure { margin:8px 0 0; max-width:260px; }
+  .steps figure img { border:1px solid var(--line); }
+  .credits { font-size:11.5px; color:var(--ink3); line-height:1.7; text-wrap:pretty; }
+  .credits a { color:var(--ink2); text-underline-offset:2px; }
+  .bus-body { fill:var(--body); stroke:var(--ink2); stroke-width:1.6; }
+  .glass { fill:var(--glass); stroke:none; }
+  .wheel { fill:var(--ink2); }
+  .door { fill:var(--panel); stroke:var(--ink); stroke-width:2; }
+  .door.in { stroke:var(--d3); }
+  .door.out { stroke:var(--d2); }
+  .flow { fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .flow.in { stroke:var(--d3); }
+  .flow.out { stroke:var(--d2); }
+  .box { fill:var(--panel); stroke:var(--ink2); stroke-width:1.4; }
+  .lbl { font-family:var(--fs); font-size:13px; font-weight:600; fill:var(--ink); }
+  .sub2 { font-family:var(--fm); font-size:11px; fill:var(--ink3); }
+  .tin { font-family:var(--fm); font-size:10.5px; fill:var(--ink2); }
+  @media (max-width:640px) {
+    .wrap { padding:20px 14px 48px; }
+    .back { display:inline-flex; align-items:center; min-height:44px; margin-top:4px; }
+    .steps li { font-size:14.5px; }
+    .card p, table { font-size:13.5px; }
+    thead { display:none; }
+    tr { display:block; padding:8px 0; border-bottom:1px solid var(--line); }
+    td { display:block; border:0; padding:0 0 2px; }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    *, *::before, *::after { animation-duration:.01ms !important;
+      transition-duration:.01ms !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <p class="eyebrow">2026.10.01 &ndash; 10.04 &middot; 아오모리</p>
+    <h1>아오모리 버스 타는 법</h1>
+    <p class="lede"><strong>아오모리에 지하철은 없다.</strong> 이번 일정에 JR 열차를 타는 구간도 없다.
+      전부 버스 셋과 도보다. 그리고 일본 지방 버스는 한국과 반대로 <strong>뒤로 타서 앞으로 내린다.</strong>
+      이 한 가지만 알면 나머지는 따라온다.</p>
+    <a class="back" href="index.html">&larr; 동선 &middot; 일정으로</a>
+  </header>
+
+  <section class="sec">
+    <div class="sechead"><h2>이번 일정에서 타는 것</h2></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>언제</th><th>무엇</th><th>구간</th><th>내는 법</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1일차</td>
+            <td><span class="jpn">空港連絡バス</span> <span class="ko">공항버스</span></td>
+            <td>공항 &rarr; 아오모리역</td><td>아래 2번</td></tr>
+          <tr><td class="num">1일차</td>
+            <td><span class="jpn">青森市営バス</span> <span class="ko">시영버스</span></td>
+            <td>아오모리역 &rarr; 산나이마루야마</td><td><b>아래 1번. 이게 기본형이다</b></td></tr>
+          <tr><td class="num">2일차</td>
+            <td><span class="jpn">みずうみ号</span> <span class="ko">미즈우미호</span></td>
+            <td>아오모리역 &harr; 핫코다 &middot; 스카유</td><td>아래 3번</td></tr>
+          <tr><td class="num">3일차</td><td>없음. 전 구간 도보</td>
+            <td>역에서 12분 안</td><td>&mdash;</td></tr>
+          <tr><td class="num">4일차</td>
+            <td><span class="jpn">空港連絡バス</span> <span class="ko">공항버스</span></td>
+            <td>아오모리역 &rarr; 공항</td><td>아래 2번</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead">
+      <h2>1. <span class="jpn">青森市営バス</span> <span class="ko">시영버스</span></h2>
+      <span class="when">1일차</span>
+    </div>
+
+    <p>거리에 따라 요금이 오르는 방식이라(<span class="jpn">対キロ区間制</span>) <b>어디서 탔는지를 버스가 알아야 한다.</b>
+      그걸 증명하는 종이가 <span class="jpn">整理券</span>(세이리켄, 정리권)이다. IC카드를 쓰면 카드가 대신 기억하므로 종이가 필요 없다.</p>
+
+    <div class="real">
+      <div class="row">
+        <figure><img class="ph" src="img/citybus.jpg" alt="아오모리 시영버스 실차" loading="lazy">
+          <figcaption><b>이 버스다.</b> 문이 둘 보이면 뒤쪽(중앙)이 타는 문이다</figcaption></figure>
+        <figure><img class="ph" src="img/bus-ticket.jpg" alt="번호가 찍힌 정리권 실물" loading="lazy">
+          <figcaption><b>整理券.</b> 이렇게 생긴 종이가 나온다. 번호를 기억할 필요는 없고 잃지만 않으면 된다</figcaption></figure>
+        <figure><img class="ph" src="img/bus-farebox.jpg" alt="버스 운임함 실물" loading="lazy">
+          <figcaption><b>運賃箱.</b> 운전석 옆. 여기에 정리권과 동전을 같이 넣는다. 환전기가 붙어 있다</figcaption></figure>
+      </div>
+    </div>
+    <figure class="diag">
+      <svg viewBox="0 0 700 262" role="img"
+           aria-label="버스 측면도. 중앙문으로 타서 정리권을 뽑고, 앞문으로 내리면서 운전석 옆 운임함에 정리권과 요금을 넣는다.">
+        <rect class="box" x="470" y="20" width="124" height="26" rx="3" />
+        <text class="tin" x="532" y="37" text-anchor="middle">運賃表 &middot; 요금 전광판</text>
+        <path class="flow" stroke="#8C9AA2" stroke-dasharray="4 4" d="M532,48 L532,86" />
+
+        <rect class="bus-body" x="90" y="88" width="520" height="104" rx="10" />
+        <rect class="glass" x="104" y="100" width="66" height="40" rx="4" />
+        <rect class="glass" x="250" y="100" width="80" height="40" rx="4" />
+        <rect class="glass" x="470" y="100" width="124" height="40" rx="4" />
+        <circle class="wheel" cx="168" cy="198" r="17" />
+        <circle class="wheel" cx="530" cy="198" r="17" />
+        <text class="sub2" x="626" y="144">뒤</text>
+        <text class="sub2" x="74" y="144" text-anchor="end">앞</text>
+
+        <rect class="door out" x="180" y="106" width="46" height="86" rx="3" />
+        <rect class="door in"  x="352" y="106" width="46" height="86" rx="3" />
+
+        <path class="flow in" d="M375,244 L375,206" />
+        <path class="flow in" d="M368,214 L375,206 L382,214" />
+        <text class="lbl" x="375" y="258" text-anchor="middle">&#9312; 중앙문으로 탄다</text>
+
+        <rect class="box" x="404" y="122" width="52" height="38" rx="3" />
+        <text class="tin" x="430" y="139" text-anchor="middle">整理券</text>
+        <text class="tin" x="430" y="153" text-anchor="middle">정리권</text>
+        <text class="sub2" x="430" y="176" text-anchor="middle">&#9313; 한 장 뽑는다</text>
+
+        <rect class="box" x="236" y="122" width="52" height="38" rx="3" />
+        <text class="tin" x="262" y="139" text-anchor="middle">運賃箱</text>
+        <text class="tin" x="262" y="153" text-anchor="middle">운임함</text>
+        <text class="sub2" x="262" y="176" text-anchor="middle">&#9314; 정리권 + 요금</text>
+
+        <path class="flow out" d="M203,206 L203,244" />
+        <path class="flow out" d="M196,236 L203,244 L210,236" />
+        <text class="lbl" x="203" y="258" text-anchor="middle">&#9315; 앞문으로 내린다</text>
+      </svg>
+      <figcaption>중앙문 IN &rarr; 앞문 OUT. 한국 버스와 반대다.</figcaption>
+    </figure>
+
+    <h3>현금으로 낼 때</h3>
+    <ol class="steps">
+      <li><b>중앙문</b>으로 탄다.
+        <span class="sub">차체 가운데 문이다. 앞문으로 타려 하면 막힌다.</span></li>
+      <li>문 옆 기계에서 <span class="jpn">整理券</span>을 <b>한 장 뽑는다.</b>
+        <span class="sub">번호가 찍혀 있다. 이걸 잃으면 시발점 요금을 내야 한다.</span></li>
+      <li>앞쪽 전광판(<span class="jpn">運賃表</span>)에서 <b>내 정리권 번호 아래의 금액</b>을 본다.
+        <span class="sub">정차할 때마다 금액이 올라간다. 내릴 때 보이는 값이 낼 돈이다.</span></li>
+      <li>내리기 전에 <b>잔돈을 바꾼다.</b>
+        <span class="sub">운임함에 <span class="jpn">両替機</span>(환전기)가 붙어 있다. <b>요금을 넣기 전에</b> 바꿔야 한다.</span></li>
+      <li><b>앞문</b>으로 내리면서 운전석 옆 <span class="jpn">運賃箱</span>에 <b>정리권과 요금을 같이</b> 넣는다.
+        <span class="sub">거스름돈은 안 나온다. 그래서 4번이 먼저다.</span></li>
+    </ol>
+
+    <div class="note ok">
+      <p><strong>IC카드를 쓰면 위의 절반이 사라진다.</strong> <span class="jpn">整理券</span>도, 환전기도 필요 없다.</p>
+      <p><b>탈 때</b> 중앙문 리더에 터치 &rarr; <b>내릴 때</b> 운임함 위 리더에 터치. 요금은 알아서 빠진다. 각각 "삑" 소리가 나면 된 것이다.</p>
+      <p>쓸 수 있는 카드: <span class="jpn">Suica &middot; PASMO &middot; Kitaca &middot; TOICA &middot; manaca &middot; PiTaPa &middot; ICOCA &middot; nimoca &middot; はやかけん &middot; SUGOCA</span>, 그리고 <b>모바일 Suica &middot; 모바일 PASMO</b>. 잔액이 모자라면 그 자리에서 현금으로 채울 수 있다.</p>
+      <p><b>아이폰에 모바일 Suica 를 깔아 가면 이 노선은 현금이 아예 필요 없다.</b> 현금 35,000엔은 산간 시설과 시장용으로 남겨 둔다.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead">
+      <h2>2. <span class="jpn">空港連絡バス</span> <span class="ko">공항버스</span></h2>
+      <span class="when">1일차 &middot; 4일차</span>
+    </div>
+
+    <p>운행사는 <span class="jpn">JRバス東北</span>(JR버스 도호쿠)다. 공항과 아오모리역을 약 35분에 잇는다.
+      예약은 없고 줄을 서서 탄다.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h4>1일차</h4>
+        <p>도착 11:35 &rarr; 입국심사&middot;수하물 &rarr; 버스승강장. 종점이 <span class="jpn">青森駅前</span>이라 숙소 도보권에 그대로 내린다.</p>
+      </div>
+      <div class="card">
+        <h4>4일차</h4>
+        <p>아오모리역 <b>09:50 경</b> 출발 &rarr; 공항 10:45 경. <b>이 버스를 놓치면 12:45 비행기가 위험하다.</b> 조식을 7:30~9:00 으로 잡은 이유다.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <p><strong>지불 방법이 출처마다 갈린다. 둘 다 준비해 간다.</strong></p>
+      <p>요금 750엔은 여러 곳이 일치한다. 그런데 "현금과 IC카드 둘 다 된다"는 기록과 "현금 불가, IC&middot;터치결제만"이라는 기록이 같이 있다.
+        <b>IC카드와 750엔 현금을 둘 다 가지고 있으면 어느 쪽이어도 탄다.</b></p>
+      <p>아오모리공항 공식 사이트는 도메인 전체가 403 이라 원문 확인이 안 됐다. 출발 전에 브라우저로 한 번 열어 볼 것.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead">
+      <h2>3. <span class="jpn">みずうみ号</span> <span class="ko">미즈우미호</span></h2>
+      <span class="when d2">2일차</span>
+    </div>
+
+    <p>아오모리역과 핫코다&middot;스카유를 잇는 <span class="jpn">JRバス東北</span>의 노선이다.
+      2일차는 <b>이 버스 없이는 성립하지 않는다.</b> 아오모리역 <b>11번 승강장</b>에서 탄다.</p>
+
+    <div class="note ok">
+      <p><strong>예약은 필요 없다. 단 선착순이다.</strong></p>
+      <p>JR버스 도호쿠 공식이 "아오모리~스카유 라인"에 예약을 요구하는데, 괄호에 <span class="jpn">八甲田号</span>(하코다호)라고 적혀 있다.
+        그건 <b>11/12~3/31 겨울 노선</b>이다. 우리 2일차 10/2 는 <span class="jpn">みずうみ号</span>(미즈우미호, <b>9/18~11/17</b>) 기간이고,
+        미즈우미호도 핫코다 로프웨이역과 스카유온천을 경유한다.</p>
+      <p><b>예약이 없다는 건 앉을 자리가 보장되지 않는다는 뜻이다.</b> 첫 편에 맞춰 일찍 줄을 선다.
+        참고로 예약이 필요한 노선도 <b>전화 예약은 받지 않는다</b> — 공식 사이트의 WILLER 배너로만 된다.
+        <b>0570-000448</b> 은 문의 전용이다.</p>
+    </div>
+
+    <ul class="steps">
+      <li>차내에 <b>화장실이 없다.</b> 타기 전에 역에서 해결한다.
+        <span class="sub">중간에 5~10분 휴게 정차가 있다.</span></li>
+      <li>하차는 <span class="jpn">八甲田ロープウェー駅前</span>(로프웨이 산록역 앞).
+        <span class="sub">돌아올 때는 <span class="jpn">酸ヶ湯温泉</span>에서 북행을 탄다.</span></li>
+      <li>요금표가 별도 PDF 라 이 페이지에 싣지 않았다. 프리패스가 이득인지도 아직 안 닫혔다.</li>
+    </ul>
+
+    <p><a href="https://www.jrbustohoku.co.jp/towadako-oirase/ko/" target="_blank" rel="noopener">JR버스 도호쿠 공식 (한국어) &rarr;</a></p>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h2>헷갈리기 쉬운 것</h2></div>
+    <div class="cards">
+      <div class="card">
+        <h4>문 방향</h4>
+        <p>한국은 앞으로 타고 뒤로 내린다. 일본 지방 버스는 <b>반대</b>다. 앞문 앞에 서 있으면 기사가 손짓으로 뒤를 가리킨다.</p>
+      </div>
+      <div class="card">
+        <h4>거스름돈</h4>
+        <p>운임함은 거스름돈을 안 준다. <b>1,000엔 지폐와 동전을 들고 탄다.</b></p>
+      </div>
+      <div class="card">
+        <h4>정리권을 안 뽑았을 때</h4>
+        <p>시발점부터 탄 것으로 계산돼 더 낸다. 내릴 때 말하면 조정해 주지만 일본어가 필요하다. 그냥 뽑는 게 빠르다.</p>
+      </div>
+      <div class="card">
+        <h4>하차 벨</h4>
+        <p>안 누르면 안 선다. 다음 정류장 안내 방송이 나오면 그때 누른다.</p>
+      </div>
+      <div class="card">
+        <h4>로프웨이 줄</h4>
+        <p>역에 줄이 <b>둘</b>이다. 왼쪽이 티켓, 오른쪽이 탑승. <b>티켓이 먼저다.</b> 키오스크가 없고 직원 2명이 판다. 하산하므로 편도권으로 되는지 매표에서 확인한다.</p>
+      </div>
+      <div class="card">
+        <h4>IC카드 충전</h4>
+        <p>버스 안에서는 충전이 안 된다. 편의점이나 역에서 미리 채운다. 모바일 Suica 는 앱에서 바로 된다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h2>사진 출처</h2></div>
+    <p class="credits"><a href="https://commons.wikimedia.org/wiki/File%3AAomori_City_Bus_1179.jpg" target="_blank" rel="noopener">Aomori City Bus 1179.jpg</a> — Animataru / CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3AJR%E3%83%90%E3%82%B9%E9%96%A2%E6%9D%B1_%E6%95%B4%E7%90%86%E5%88%B8_1%E7%95%AA.png" target="_blank" rel="noopener">JRバス関東 整理券 1番.png</a> — Japanbird / CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3A%E3%83%90%E3%82%B9%E9%81%8B%E8%B3%83%E7%AE%B1_2017_%2833139447731%29.jpg" target="_blank" rel="noopener">バス運賃箱 2017 (33139447731).jpg</a> — bangdoll from Taipei,Taiwan / CC BY-SA 2.0<br>전부 위키미디어 커먼즈. 정리권과 운임함은 다른 지역 버스의 것이지만 형태와 사용법은 같다. 아오모리 시영버스 실차만 아오모리 것이다.</p>
+  </section>
+
+  <footer>
+    시영버스 승하차 방식&middot;요금 방식&middot;IC카드 목록은 아오모리시 공식
+    <a href="https://www.city.aomori.aomori.jp/koutsu/bus/riyouhouhou.html" target="_blank" rel="noopener">乗車方法</a> 과
+    <a href="https://www.city.aomori.aomori.jp/koutsu/joushaken_buscard/1002297/1002304.html" target="_blank" rel="noopener">AOPASS 이용방법</a> 에서 확인 (2026-09-20).
+    공항버스 지불 방법과 미즈우미호 예약 요건은 <b>미확정</b>이라 위에 그대로 적어 두었다.
+    시각표는 싣지 않는다 &mdash; 계절 개정이 잦아 운영사 공식만 본다.
+    단일 출처는 <code>trips/aomori-2026-10/trip.yaml</code>.
+  </footer>
+
+</div>
+</body>
+</html>

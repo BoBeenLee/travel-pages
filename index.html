@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#EFF0EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121A1F" media="(prefers-color-scheme: dark)">
+<meta name="description" content="여행 저장소의 현장용 페이지 목록.">
+<meta name="robots" content="noindex,nofollow">
+<title>여행 현장용 페이지</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+  :root { color-scheme:light dark;
+    --paper:#EFF0EA; --panel:#F7F8F3; --line:#C8CCC1;
+    --ink:#1C2831; --ink2:#5D6C75; --ink3:#8C9AA2; --d1:#24707E;
+    --fs:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+    --fm:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace; }
+  @media (prefers-color-scheme:dark) { :root:not([data-theme="light"]) {
+    --paper:#121A1F; --panel:#18222A; --line:#2C3A43;
+    --ink:#E6E9E5; --ink2:#93A2AB; --ink3:#6B7A83; --d1:#58A9BA; } }
+  :root[data-theme="dark"] {
+    --paper:#121A1F; --panel:#18222A; --line:#2C3A43;
+    --ink:#E6E9E5; --ink2:#93A2AB; --ink3:#6B7A83; --d1:#58A9BA; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--fs); line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:680px; margin:0 auto; padding:40px 20px 56px; }
+  .eyebrow { font-family:var(--fm); font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink2); margin:0 0 6px; }
+  h1 { font-size:clamp(24px,3.4vw,32px); margin:0 0 10px; font-weight:700;
+    letter-spacing:-.02em; text-wrap:balance; }
+  .lede { margin:0 0 28px; color:var(--ink2); font-size:14px; text-wrap:pretty;
+    padding-bottom:18px; border-bottom:2px solid var(--ink); }
+  .trips { display:flex; flex-direction:column; gap:14px; }
+  .trip { background:var(--panel); border:1px solid var(--line);
+    border-left:4px solid var(--d1); padding:16px 18px; }
+  .trip h2 { font-size:17px; margin:0 0 4px; font-weight:600; }
+  .trip .when { font-family:var(--fm); font-size:12px; color:var(--ink3);
+    font-variant-numeric:tabular-nums; }
+  .trip p { margin:9px 0 12px; font-size:13.5px; color:var(--ink2); text-wrap:pretty; }
+  .trip ul { list-style:none; margin:0; padding:0; display:flex;
+    flex-wrap:wrap; gap:8px 18px; font-family:var(--fm); font-size:12.5px; }
+  a { color:var(--d1); text-underline-offset:3px; }
+  a:focus-visible { outline:2px solid var(--d1); outline-offset:2px; }
+  footer { margin-top:32px; padding-top:14px; border-top:1px solid var(--line);
+    font-size:12px; color:var(--ink3); text-wrap:pretty; }
+  footer code { font-family:var(--fm); font-size:11.5px; color:var(--ink2); }
+  @media (max-width:640px) {
+    .wrap { padding:24px 16px 48px; }
+    .trip ul { gap:0 14px; }
+    .trip li a { display:inline-flex; align-items:center; min-height:44px; font-size:13px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">travel</p>
+  <h1>현장용 페이지</h1>
+  <p class="lede">휴대폰으로 여는 사본이다. 값의 단일 출처는 저장소의 <code>trip.yaml</code> 이고,
+    이 페이지들은 main 에 머지될 때 다시 배포된다.</p>
+
+  <div class="trips">
+    <article class="trip">
+      <h2>아오모리 3박 4일</h2>
+      <span class="when">2026.10.01 &ndash; 10.04 &middot; 1인 &middot; ICN &harr; AOJ</span>
+      <p>핫코다 하이킹이 메인. 시내 3박, 3일차는 전 구간 도보.</p>
+      <ul>
+        <li><a href="aomori-2026-10/">동선 &middot; 일정 &rarr;</a></li>
+        <li><a href="aomori-2026-10/transit.html">버스 타는 법 &rarr;</a></li>
+      </ul>
+    </article>
+  </div>
+
+  <footer>
+    저장소가 public 이라 이 페이지들은 URL 을 아는 사람이면 누구나 본다.
+    예약번호&middot;카드&middot;여권은 <code>private/</code> 밖으로 내지 않는다.
+    산간에서는 전파가 없어 안 열리니 출발 전에 한 번 열어 둘 것.
+  </footer>
+</div>
+</body>
+</html>

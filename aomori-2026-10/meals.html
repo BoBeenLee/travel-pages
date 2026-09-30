@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#EFF0EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121A1F" media="(prefers-color-scheme: dark)">
+<meta name="description" content="아오모리 3박 4일, 날짜별로 무엇을 먹는지. 가게·시키는 것·시간·현금 여부.">
+<meta name="robots" content="noindex,nofollow">
+<title>아오모리 끼니 · 날짜별</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --paper:#EFF0EA; --panel:#F7F8F3; --land:#DBDDD2; --sea:#BFCDD6;
+    --ink:#1C2831; --ink2:#5D6C75; --ink3:#8C9AA2; --line:#C8CCC1;
+    --d1:#24707E; --d2:#B4551E; --d3:#486B3D; --d4:#7B6A57; --shuttle:#6E7A80;
+    --ok:#3F6B4A; --tbd:#9A6B1E; --okbg:#E2EAE0; --tbdbg:#F2E8D4;
+    --fs:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+    --fm:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --fj:"Noto Sans JP","Hiragino Sans","Yu Gothic",
+      var(--fs);
+    --buy:#7A4E86; --buybg:#EDE6F0;
+    --sh:rgba(28,40,49,.10);
+    --bowl:#E8E3D8; --broth:#E0B054; --butter:#F2DC8A; --pork:#D9A28A;
+    --menma:#D6C48A; --nori:#2E3B36; --shell:#E2DED2; --miso:#C08A44;
+    --yolk:#EFC75E; --scallop:#F0E0CE; --rice:#F4F1E7; --fish:#E4907F;
+    --roe:#E08A4A; --zaru:#D8CBA8; --soba:#B9A67E; --tsuyu:#6B4A2E;
+    --tray:#B98E63; --pastry:#DFC292; --apple:#E4C56B; --senbei:#E6D6B4;
+    --choco:#6B4A36; --dried:#D7B98C; --glassA:#8FC4CC; --glassB:#E0A24B;
+    --glassC:#C0596B; --squid:#EADCC6; --cheese:#F0D98A;
+  }
+  @media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+      --paper:#121A1F; --panel:#18222A; --land:#1F2A31; --sea:#0C1419;
+      --ink:#E6E9E5; --ink2:#93A2AB; --ink3:#6B7A83; --line:#2C3A43;
+      --d1:#58A9BA; --d2:#E3853F; --d3:#86B276; --d4:#A8977F; --shuttle:#84949C;
+      --ok:#8FBE97; --tbd:#DFB765; --okbg:#1E2E24; --tbdbg:#2E2717;
+      --buy:#C6A2D0; --buybg:#2A2130;
+      --sh:rgba(0,0,0,.34);
+      --bowl:#2E3A42; --broth:#B98A3C; --butter:#C7B267; --pork:#A87766;
+      --menma:#A8996B; --nori:#1A2320; --shell:#39444B; --miso:#95692F;
+      --yolk:#C39C42; --scallop:#BFA88F; --rice:#D9D4C6; --fish:#B56A5C;
+      --roe:#B26A36; --zaru:#8E8360; --soba:#8A7A58; --tsuyu:#4A3320;
+      --tray:#7C5C3E; --pastry:#A6875D; --apple:#B49646; --senbei:#A8966F;
+      --choco:#4A3226; --dried:#9C8360; --glassA:#5E9AA4; --glassB:#B57C33;
+      --glassC:#94414F; --squid:#B3A68F; --cheese:#BCA85F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#121A1F; --panel:#18222A; --land:#1F2A31; --sea:#0C1419;
+    --ink:#E6E9E5; --ink2:#93A2AB; --ink3:#6B7A83; --line:#2C3A43;
+    --d1:#58A9BA; --d2:#E3853F; --d3:#86B276; --d4:#A8977F; --shuttle:#84949C;
+    --ok:#8FBE97; --tbd:#DFB765; --okbg:#1E2E24; --tbdbg:#2E2717;
+      --buy:#C6A2D0; --buybg:#2A2130;
+      --sh:rgba(0,0,0,.34);
+      --bowl:#2E3A42; --broth:#B98A3C; --butter:#C7B267; --pork:#A87766;
+      --menma:#A8996B; --nori:#1A2320; --shell:#39444B; --miso:#95692F;
+      --yolk:#C39C42; --scallop:#BFA88F; --rice:#D9D4C6; --fish:#B56A5C;
+      --roe:#B26A36; --zaru:#8E8360; --soba:#8A7A58; --tsuyu:#4A3320;
+      --tray:#7C5C3E; --pastry:#A6875D; --apple:#B49646; --senbei:#A8966F;
+      --choco:#4A3226; --dried:#9C8360; --glassA:#5E9AA4; --glassB:#B57C33;
+      --glassC:#94414F; --squid:#B3A68F; --cheese:#BCA85F;
+  }
+  * { box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--fs);
+    line-height:1.55; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1240px; margin:0 auto; padding:28px 20px 56px; }
+  .top { display:flex; flex-wrap:wrap; align-items:flex-end; gap:18px 28px;
+    padding-bottom:16px; border-bottom:2px solid var(--ink); }
+  .eyebrow { font-family:var(--fm); font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink2); margin:0 0 4px; }
+  h1 { font-size:clamp(26px,3.6vw,40px); font-weight:700; letter-spacing:-.02em;
+    margin:0; text-wrap:balance; }
+  .facts { display:flex; flex-wrap:wrap; gap:6px 22px; margin-left:auto;
+    font-family:var(--fm); font-size:12.5px; color:var(--ink2); }
+  .facts b { color:var(--ink); font-weight:500; }
+  .grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:26px; margin-top:24px; align-items:start; }
+  @media (max-width:900px) { .grid { grid-template-columns:minmax(0,1fr); } }
+  .mapcard { background:var(--panel); border:1px solid var(--line); padding:14px; }
+  .mapcard + .mapcard { margin-top:22px; }
+  .maphead { display:flex; justify-content:space-between; align-items:baseline;
+    gap:12px; margin:0 0 8px; }
+  .maphead h2, .sechead h2 { font-size:13px; font-weight:600; letter-spacing:.09em;
+    text-transform:uppercase; margin:0; color:var(--ink2); }
+  .scale { font-family:var(--fm); font-size:11px; color:var(--ink3); }
+  svg.map { display:block; width:100%; height:auto; }
+  .mapscroll { overflow-x:auto; }
+  .landbg { fill:var(--land); }
+  .sea { fill:var(--sea); stroke:none; }
+  .admin { stroke:var(--line); stroke-width:1.2; stroke-dasharray:6 4; }
+  .rt { stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; }
+  .rt.d1 { stroke:var(--d1); } .rt.d2 { stroke:var(--d2); }
+  .rt.shuttle { stroke:var(--shuttle); stroke-dasharray:7 5; stroke-width:2.5; }
+  .rt.back { stroke-dasharray:2.5 6; stroke-width:2.6; }
+  .rope { stroke:var(--d2); stroke-width:1.8; stroke-dasharray:3 3; }
+  .hike { stroke:var(--d2); stroke-width:6; stroke-dasharray:.1 9;
+    stroke-linecap:round; }
+  .stop { stroke:var(--panel); stroke-width:2.4; }
+  .stop.hub { fill:var(--ink); } .stop.d1 { fill:var(--d1); }
+  .stop.d2 { fill:var(--d2); } .stop.d3 { fill:var(--d3); }
+  .stop.shuttle { fill:var(--shuttle); }
+  .slab { font-family:var(--fs); font-size:14.5px; font-weight:600; fill:var(--ink); }
+  .selev { font-family:var(--fm); font-size:11.5px; font-weight:400; fill:var(--ink3); }
+  .glab { font-family:var(--fs); font-size:13px; fill:var(--ink3); letter-spacing:.1em; }
+  .hlab { font-family:var(--fm); font-size:12px; fill:var(--d2); font-weight:500; }
+  .legend { display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:12px;
+    padding-top:11px; border-top:1px solid var(--line);
+    font-size:12.5px; color:var(--ink2); }
+  .lg { display:flex; align-items:center; gap:7px; }
+  .sw { width:22px; height:0; border-top-width:3px; border-top-style:solid; }
+  .sw.d1 { border-color:var(--d1); } .sw.d2 { border-color:var(--d2); }
+  .sw.shuttle { border-color:var(--shuttle); border-top-style:dashed; }
+  .sw.hike { border-color:var(--d2); border-top-style:dotted; border-top-width:4px; }
+  .days { display:flex; flex-direction:column; gap:14px; }
+  .day { background:var(--panel); border:1px solid var(--line);
+    border-left:4px solid var(--line); padding:14px 16px; }
+  .day.d1 { border-left-color:var(--d1); } .day.d2 { border-left-color:var(--d2); }
+  .day.d3 { border-left-color:var(--d3); } .day.d4 { border-left-color:var(--d4); }
+  .dh { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .dnum { font-family:var(--fm); font-size:12px; font-weight:600; color:var(--paper);
+    background:var(--ink); width:20px; height:20px; display:grid; place-items:center;
+    align-self:center; }
+  .dmeta { font-family:var(--fm); font-size:13px; color:var(--ink2); }
+  .dmeta b { color:var(--ink); font-weight:600; }
+  .dow { color:var(--ink3); }
+  .dh h3 { font-size:15px; font-weight:600; margin:0; flex:1 1 100%; }
+  .legs { list-style:none; margin:11px 0 0; padding:0; display:flex;
+    flex-direction:column; gap:7px; }
+  .leg { display:grid; grid-template-columns:62px 1fr auto; gap:10px;
+    align-items:baseline; font-size:13.5px; }
+  .lt { font-family:var(--fm); font-size:12px; color:var(--ink3);
+    font-variant-numeric:tabular-nums; }
+  .lw { display:flex; flex-direction:column; gap:1px; min-width:0; }
+  .ln { color:var(--ink); }
+  .lm { font-family:var(--fm); font-size:11.5px; color:var(--ink2); }
+  .pill { font-family:var(--fm); font-size:10.5px; padding:2px 7px;
+    white-space:nowrap; align-self:center; }
+  .pill.ok { color:var(--ok); background:var(--okbg); }
+  .pill.tbd { color:var(--tbd); background:var(--tbdbg); }
+  .dnote { font-size:12.5px; color:var(--ink2); margin:11px 0 0;
+    padding-top:10px; border-top:1px dashed var(--line); }
+  .dstay { font-size:12.5px; margin:8px 0 0; color:var(--ink); }
+  .dstay span { font-family:var(--fm); font-size:10.5px; letter-spacing:.1em;
+    color:var(--ink3); margin-right:8px; text-transform:uppercase; }
+  .sec { margin-top:30px; }
+  .sechead { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    border-bottom:1px solid var(--line); padding-bottom:7px; margin-bottom:14px; }
+  .sechead p { margin:0; font-size:12.5px; color:var(--ink3); }
+  .profwrap { background:var(--panel); border:1px solid var(--line);
+    padding:12px; overflow-x:auto; }
+  svg.prof { display:block; width:100%; min-width:620px; height:auto; }
+  .parea { fill:var(--land); opacity:.55; }
+  .ps { stroke-width:2.8; stroke-linecap:round; stroke-linejoin:round; }
+  .ps.d1 { stroke:var(--d1); } .ps.d2 { stroke:var(--d2); }
+  .ps.shuttle { stroke:var(--shuttle); stroke-dasharray:6 4; stroke-width:2; }
+  .ps.rope { stroke:var(--d2); stroke-dasharray:3 3; stroke-width:1.8; }
+  .ps.hike { stroke:var(--d2); stroke-dasharray:.1 8; stroke-width:6;
+    stroke-linecap:round; }
+  .pgrid { stroke:var(--line); stroke-width:1; }
+  .pax { font-family:var(--fm); font-size:10.5px; fill:var(--ink3); }
+  .pdot { fill:var(--panel); stroke:var(--ink2); stroke-width:1.4; }
+  .plab { font-family:var(--fs); font-size:11.5px; fill:var(--ink2); }
+  .risks { display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr));
+    gap:12px; }
+  .risk { border:1px solid var(--line); border-top:3px solid var(--tbd);
+    background:var(--panel); padding:13px 15px; }
+  .risk h4 { font-size:14px; margin:0 0 5px; font-weight:600; }
+  .risk p { margin:0; font-size:12.5px; color:var(--ink2); }
+  .risk .tag { font-family:var(--fm); font-size:10.5px; color:var(--ink3);
+    letter-spacing:.08em; display:block; margin-bottom:6px; }
+  a.pl { color:inherit; text-decoration:underline; text-decoration-style:dotted;
+    text-decoration-color:var(--ink3); text-underline-offset:3px;
+    text-decoration-thickness:1px; }
+  a.pl:focus-visible { color:var(--d1); text-decoration-color:var(--d1);
+    text-decoration-style:solid; }
+  @media (hover:hover) { a.pl:hover { color:var(--d1); text-decoration-color:var(--d1);
+    text-decoration-style:solid; } }
+  a.pl:focus-visible { outline:2px solid var(--d1); outline-offset:2px; }
+  .jpn { font-family:var(--fj); font-weight:500; }
+  .ko { color:var(--ink2); }
+  .leg .ko { font-size:12.5px; }
+  .navline { display:flex; flex-wrap:wrap; gap:8px 14px; margin-top:12px;
+    font-family:var(--fm); font-size:12px; }
+  .navline a { color:var(--d1); text-underline-offset:3px; }
+  .packs { display:grid; grid-template-columns:repeat(auto-fit,minmax(266px,1fr));
+    gap:14px; align-items:start; }
+  .pack { background:var(--panel); border:1px solid var(--line);
+    border-top:3px solid var(--d2); padding:13px 15px; }
+  .pack.must { border-top-color:var(--tbd); }
+  .pack.leave { border-top-color:var(--ink3); }
+  .pack h4 { font-size:13.5px; margin:0 0 3px; font-weight:600; }
+  .pack > p { margin:0 0 10px; font-size:12px; color:var(--ink3); }
+  .pack ul { list-style:none; margin:0; padding:0; display:flex;
+    flex-direction:column; gap:8px; }
+  .pack li { font-size:13px; padding-left:13px; position:relative; text-wrap:pretty; }
+  .pack li::before { content:""; position:absolute; left:0; top:.55em;
+    width:5px; height:5px; background:var(--ink3); }
+  .pack .why { display:block; color:var(--ink2); font-size:12px; margin-top:2px; }
+  .bk { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:14px; }
+  .bkc { background:var(--panel); border:1px solid var(--line);
+    border-left:4px solid var(--d1); padding:14px 16px; }
+  .bkc h4 { font-size:14.5px; margin:0 0 8px; font-weight:600; }
+  .bkc dl { margin:0; display:grid; grid-template-columns:auto 1fr;
+    gap:5px 12px; font-size:12.5px; align-items:baseline; }
+  .bkc dt { font-family:var(--fm); font-size:10.5px; letter-spacing:.08em;
+    color:var(--ink3); text-transform:uppercase; white-space:nowrap; }
+  .bkc dd { margin:0; color:var(--ink); }
+  .bkc .go { display:inline-flex; margin-top:11px; font-family:var(--fm);
+    font-size:12px; color:var(--d1); text-underline-offset:3px; }
+  .bkc .warn { margin:10px 0 0; font-size:12px; color:var(--ink2);
+    padding-top:9px; border-top:1px dashed var(--line); text-wrap:pretty; }
+  /* 항공 · Visit Japan Web — 공항에서 바로 여는 카드 */
+  .fl { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .fl .bkc.vjw { border-left-color:var(--d2); }
+  .fl .when { font-family:var(--fm); font-size:11px; letter-spacing:.1em; color:var(--ink3); margin:0 0 2px; }
+  .fl .rt { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:10px;
+    margin:4px 0 12px; font-family:var(--fm); font-variant-numeric:tabular-nums; }
+  .fl .rt .pt { display:grid; line-height:1.2; }
+  .fl .rt .pt:last-child { text-align:right; }
+  .fl .rt b { font-size:26px; font-weight:600; letter-spacing:-.01em; color:var(--ink); }
+  .fl .rt .ap { font-size:12px; color:var(--ink2); }
+  .fl .rt i { font-style:normal; font-size:11px; color:var(--ink3); text-align:center;
+    border-bottom:1px dashed var(--line); padding-bottom:2px; }
+  .fl .cta { display:flex; align-items:center; justify-content:center; min-height:46px; margin-top:12px;
+    background:var(--d2); color:#fff; font-weight:600; font-size:14px; text-decoration:none; border-radius:6px; }
+  .fl .cta:active { opacity:.85; }
+  .ic { width:100%; max-width:104px; height:auto; display:block; flex:0 0 auto; }
+  .meals { display:flex; flex-direction:column; gap:14px; }
+  .meal { background:var(--panel); border:1px solid var(--line);
+    border-left:4px solid var(--line); padding:14px 16px;
+    display:grid; grid-template-columns:104px minmax(0,1fr); gap:6px 16px;
+    align-items:start; }
+  .meal.d1 { border-left-color:var(--d1); } .meal.d2 { border-left-color:var(--d2); }
+  .meal.d3 { border-left-color:var(--d3); } .meal.d4 { border-left-color:var(--d4); }
+  @media (max-width:560px) { .meal { grid-template-columns:1fr; }
+    .ic { max-width:96px; margin:0 auto 4px; } }
+  .meal .art { grid-row:1 / span 3; }
+  .meal .slot { font-family:var(--fm); font-size:10.5px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink3); }
+  .meal h4 { font-size:15px; margin:2px 0 0; font-weight:600; text-wrap:balance; }
+  .meal .order { display:block; margin-top:7px; font-size:13.5px; }
+  .meal .order b { color:var(--ink); }
+  .meal dl { margin:10px 0 0; display:grid; grid-template-columns:auto 1fr;
+    gap:4px 12px; font-size:12.5px; align-items:baseline; }
+  .meal dt { font-family:var(--fm); font-size:10.5px; letter-spacing:.07em;
+    text-transform:uppercase; color:var(--ink3); white-space:nowrap; }
+  .meal dd { margin:0; color:var(--ink2); }
+  .meal dd b { color:var(--ink); }
+  .pick { background:var(--panel); border:1px solid var(--line);
+    border-top:3px solid var(--tbd); padding:14px 16px; }
+  .pick h4 { font-size:14px; margin:0 0 3px; font-weight:600; }
+  .pick > p { margin:0 0 11px; font-size:12px; color:var(--ink3); }
+  .picktable { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .picktable th, .picktable td { text-align:left; padding:8px 10px 8px 0;
+    border-bottom:1px solid var(--line); vertical-align:top; }
+  .picktable th { font-family:var(--fm); font-size:10px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink3); font-weight:500; white-space:nowrap; }
+  .picktable td.num { font-family:var(--fm); font-variant-numeric:tabular-nums;
+    white-space:nowrap; }
+  .itemart { display:flex; align-items:center; gap:12px; margin-bottom:9px;
+    padding-bottom:9px; border-bottom:1px dashed var(--line); }
+  .itemart .ic { max-width:70px; }
+  .itemart p { margin:0; font-size:12px; color:var(--ink2); text-wrap:pretty; }
+  .look { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px; margin:0 0 20px; }
+  .look figure { margin:0; background:var(--panel); border:1px solid var(--line);
+    padding:12px; display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .look .ic { max-width:88px; }
+  .look figcaption { text-align:center; font-size:12.5px; line-height:1.45; }
+  .look .n { display:block; font-family:var(--fj); font-weight:500;
+    font-size:13.5px; color:var(--ink); }
+  .look .r { display:block; font-family:var(--fm); font-size:10.5px;
+    color:var(--ink3); margin-top:1px; }
+  .look .d { display:block; color:var(--ink2); font-size:11.5px; margin-top:5px;
+    text-wrap:pretty; }
+  .ph { display:block; width:100%; height:auto; border:1px solid var(--line);
+    background:var(--panel); }
+  .meal .art img.ph { aspect-ratio:4/3; object-fit:cover; }
+  .look figure img.ph { aspect-ratio:4/3; object-fit:contain;
+    background:var(--paper); }
+  .spots { display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr)); gap:14px; }
+  .spot { margin:0; background:var(--panel); border:1px solid var(--line); }
+  .spot img.ph { border:0; border-bottom:1px solid var(--line);
+    aspect-ratio:4/3; object-fit:cover; }
+  .spot img.pano { object-fit:contain; background:var(--paper); }
+  .spot figcaption { padding:10px 12px 12px; }
+  .spot .n { display:block; font-family:var(--fj); font-weight:500; font-size:13.5px; }
+  .spot .k { display:block; color:var(--ink2); font-size:12px; margin-top:1px; }
+  .spot .d { display:block; color:var(--ink3); font-size:11.5px; margin-top:6px;
+    font-family:var(--fm); text-wrap:pretty; }
+  .credits { font-size:11.5px; color:var(--ink3); line-height:1.7; text-wrap:pretty; }
+  .credits a { color:var(--ink2); text-underline-offset:2px; }
+  .drawn { font-family:var(--fm); font-size:10px; color:var(--ink3); letter-spacing:.06em; }
+  .part { display:flex; align-items:baseline; gap:12px; margin:40px 0 4px;
+    padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .part h2 { font-size:15px; margin:0; font-weight:700; letter-spacing:-.01em; }
+  .part .no { font-family:var(--fm); font-size:11px; letter-spacing:.14em;
+    color:var(--paper); background:var(--ink); padding:2px 8px; }
+  .part p { margin:0 0 0 auto; font-size:12px; color:var(--ink3);
+    text-align:right; text-wrap:pretty; }
+  .part + .sec { margin-top:20px; }
+  .navline { display:flex; flex-wrap:wrap; gap:6px 0; margin-top:14px;
+    font-family:var(--fm); font-size:12px; align-items:center; }
+  .navline .grp { display:flex; flex-wrap:wrap; gap:6px 13px; align-items:center; }
+  .navline .grp + .grp { margin-inline-start:16px; padding-inline-start:16px;
+    border-inline-start:1px solid var(--line); }
+  .navline .gl { color:var(--ink3); letter-spacing:.1em; font-size:10px; }
+  .daylinks { display:flex; flex-wrap:wrap; gap:6px 14px; margin:11px 0 0;
+    padding-top:10px; border-top:1px dashed var(--line);
+    font-family:var(--fm); font-size:11.5px; align-items:baseline; }
+  .daylinks .gl { color:var(--ink3); letter-spacing:.09em; font-size:10px; }
+  .daylinks a { color:var(--d1); text-underline-offset:3px; }
+  .backup { display:inline-block; margin-top:12px; font-family:var(--fm);
+    font-size:11.5px; color:var(--ink3); text-underline-offset:3px; }
+  .shops { display:grid; grid-template-columns:repeat(auto-fit,minmax(296px,1fr));
+    gap:14px; align-items:start; }
+  .shop { background:var(--panel); border:1px solid var(--line);
+    border-top:3px solid var(--buy); padding:13px 15px; }
+  .shop > header { display:flex; align-items:baseline; gap:6px 10px; flex-wrap:wrap;
+    padding-bottom:9px; margin-bottom:10px; border-bottom:1px solid var(--line); }
+  .shop h4 { font-family:var(--fj); font-size:14.5px; font-weight:500; margin:0; }
+  .shop .at { font-family:var(--fm); font-size:11px; color:var(--ink3);
+    letter-spacing:.06em; margin-left:auto; white-space:nowrap; }
+  .shop .hrs { font-family:var(--fm); font-size:11px; color:var(--ink2);
+    font-variant-numeric:tabular-nums; flex:1 1 100%; }
+  .items { list-style:none; margin:0; padding:0; display:flex;
+    flex-direction:column; gap:10px; }
+  .item { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2px 10px; }
+  .item.withpic { grid-template-columns:minmax(0,1fr) auto 62px; }
+  .item .thumb { grid-row:1 / span 2; grid-column:3; width:62px; height:62px;
+    object-fit:contain; background:var(--paper);
+    border:1px solid var(--line); align-self:start; }
+  .item.withpic .wh { grid-column:1 / 3; }
+  .see { display:inline-flex; align-items:center; gap:4px; margin-top:5px;
+    font-family:var(--fm); font-size:10.5px; color:var(--ink3);
+    text-underline-offset:3px; text-decoration:underline;
+    text-decoration-style:dotted; }
+  .see:focus-visible { color:var(--d1); text-decoration-style:solid; }
+  @media (hover:hover) { .see:hover { color:var(--d1); text-decoration-style:solid; } }
+  .see.shop { color:var(--buy); }
+  .picks-note { margin:14px 0 0; font-size:12px; color:var(--ink3); text-wrap:pretty; }
+  .real { background:var(--panel); border:1px solid var(--line); padding:14px; }
+  .real .row { display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr));
+    gap:16px; align-items:start; }
+  .real figure { margin:0; display:flex; flex-direction:column; }
+  .real figure img { aspect-ratio:4/3; object-fit:contain;
+    background:var(--paper); }
+  .real figcaption { margin-top:8px; font-size:12px; color:var(--ink2); text-wrap:pretty; }
+  .real figcaption b { color:var(--ink); }
+  .item > span:nth-child(2) { display:flex; flex-direction:column; align-items:flex-end;
+    gap:4px; text-align:right; }
+  .jp { font-family:var(--fj); font-size:14.5px; font-weight:500; color:var(--ink);
+    line-height:1.4; }
+  .rd { font-family:var(--fm); font-size:11px; color:var(--ink3);
+    letter-spacing:.03em; }
+  .wh { grid-column:1/-1; font-size:12.5px; color:var(--ink2); text-wrap:pretty; }
+  .yen { font-family:var(--fm); font-size:12.5px; color:var(--ink);
+    font-variant-numeric:tabular-nums; white-space:nowrap; align-self:start; }
+  .yen.na { color:var(--ink3); font-size:11px; }
+  .flag { font-family:var(--fm); font-size:10px; padding:1px 6px;
+    color:var(--tbd); background:var(--tbdbg); white-space:nowrap; }
+  .grandprix { font-family:var(--fm); font-size:10px; padding:1px 6px;
+    color:var(--buy); background:var(--buybg); white-space:nowrap; }
+  .carry { display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr));
+    gap:12px; margin-top:14px; }
+  .carry div { background:var(--panel); border:1px solid var(--line); padding:12px 14px; }
+  .carry h4 { font-size:13px; margin:0 0 6px; font-weight:600; }
+  .carry p { margin:0; font-size:12.5px; color:var(--ink2); text-wrap:pretty; }
+  .carry .tag { font-family:var(--fm); font-size:10.5px; color:var(--ink3);
+    letter-spacing:.08em; display:block; margin-bottom:6px; }
+  footer { margin-top:30px; padding-top:14px; border-top:1px solid var(--line);
+    font-size:12px; color:var(--ink3); }
+  footer code { font-family:var(--fm); font-size:11.5px; color:var(--ink2); }
+  /* 휴대폰(≤640px) — 현장에서 한 손으로 여는 화면. 하단 탭바가 헤더 내비를 대신한다 */
+  .tabbar { display:none; }
+  [id] { scroll-margin-top:12px; }
+  @media (max-width:640px) {
+    .wrap { padding:20px 14px calc(76px + env(safe-area-inset-bottom)); }
+    .top { gap:10px 18px; }
+    .facts { margin-left:0; gap:4px 16px; }
+    .navline { display:none; }
+    .tabbar { display:flex; position:fixed; left:0; right:0; bottom:0; z-index:1;
+      background:var(--panel); border-top:1px solid var(--line);
+      padding:0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+    .tabbar a { flex:1 1 0; display:grid; place-items:center; min-height:50px;
+      font-family:var(--fm); font-size:11.5px; color:var(--ink2); text-decoration:none;
+      -webkit-tap-highlight-color:transparent; }
+    .tabbar a:active { color:var(--d1); background:var(--paper); }
+    .part { flex-wrap:wrap; gap:4px 10px; }
+    .part p { flex:1 1 100%; margin:0; text-align:left; }
+    /* ponytail: 지도는 옆으로 밀어 본다. 라벨을 폰 폭에 맞춰 다시 배치하려면 좌표를 다시 잡아야 한다 */
+    svg.map { min-width:520px; }
+    .slab { font-size:17px; } .selev { font-size:13px; } .hlab { font-size:14px; }
+    .mapcard::after, .profwrap::after { content:"옆으로 밀어 본다 →"; display:block;
+      margin-top:8px; font-family:var(--fm); font-size:10.5px; color:var(--ink3); }
+    .leg { font-size:14.5px; }
+    .leg .ko { font-size:13px; }
+    .lm { font-size:12px; }
+    .dnote, .wh, .risk p, .pack li, .carry p, .meal dd, .picktable, .bkc dl { font-size:13.5px; }
+    .meal .order { font-size:14.5px; }
+    .daylinks { gap:0 6px; font-size:12.5px; }
+    .daylinks a, .backup, .bkc .go { display:inline-flex; align-items:center;
+      min-height:40px; padding:0 4px; }
+    .spots { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .spot figcaption { padding:8px 10px 10px; }
+    .spot .n { font-size:13px; }
+    .picktable thead { display:none; }
+    .picktable tr { display:block; padding:9px 0; border-bottom:1px solid var(--line); }
+    .picktable td { display:block; border:0; padding:0; }
+    .picktable td + td { margin-top:3px; }
+    .picktable td.num::before { content:"역에서 "; font-family:var(--fs); color:var(--ink3); }
+  }
+</style>
+<style>
+  /* 아티팩트 호스트가 주던 기본값을 여기선 직접 깐다 */
+  :root { color-scheme:light dark; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; padding:0; }
+  img { max-width:100%; }
+  [hidden] { display:none !important; }
+  a:focus-visible, [tabindex]:focus-visible {
+    outline:2px solid var(--d1); outline-offset:2px; }
+  @media (prefers-reduced-motion:reduce) {
+    *, *::before, *::after { animation-duration:.01ms !important;
+      transition-duration:.01ms !important; } }
+</style>
+<style>
+  .top { padding-bottom:16px; border-bottom:2px solid var(--ink); display:block; }
+  .lede { margin:10px 0 0; font-size:14.5px; color:var(--ink2); text-wrap:pretty; max-width:62ch; }
+  .back { display:inline-flex; align-items:center; min-height:40px; margin-top:6px; font-family:var(--fm); font-size:12px; color:var(--d1); text-underline-offset:3px; }
+  .glance { width:100%; border-collapse:collapse; font-size:13px; background:var(--panel); border:1px solid var(--line); table-layout:fixed; }
+  .glance th, .glance td { text-align:left; vertical-align:top; padding:10px; border-bottom:1px solid var(--line); }
+  .glance thead th { font-family:var(--fm); font-size:10px; letter-spacing:.08em; color:var(--ink3); font-weight:500; }
+  .glance thead th:first-child { width:17%; }
+  .glance tbody th { font-family:var(--fm); font-size:11.5px; font-weight:600; border-left:4px solid var(--line); }
+  .glance tr.d1 th { border-left-color:var(--d1); } .glance tr.d2 th { border-left-color:var(--d2); }
+  .glance tr.d3 th { border-left-color:var(--d3); } .glance tr.d4 th { border-left-color:var(--d4); }
+  .glance td b { display:block; color:var(--ink); font-weight:600; }
+  .glance td span { display:block; color:var(--ink3); font-size:12px; margin-top:2px; }
+  .glance a { color:inherit; text-decoration:none; }
+  .glance tbody th a { color:var(--ink); }
+  .mday > h2 { font-size:18px; margin:0 0 4px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; text-wrap:balance; }
+  .mday > h2 .dno { font-family:var(--fm); font-size:11px; letter-spacing:.12em; color:#fff; padding:3px 7px; border-radius:3px; }
+  .mday.d1 .dno { background:var(--d1); } .mday.d2 .dno { background:var(--d2); }
+  .mday.d3 .dno { background:var(--d3); } .mday.d4 .dno { background:var(--d4); }
+  .mday > p { margin:0 0 14px; font-size:13px; color:var(--ink3); text-wrap:pretty; }
+  .meal.lite { grid-template-columns:1fr; }
+  .meal.lite .order { color:var(--ink2); }
+  .mday .pick, .mday .real { margin-top:14px; }
+  @media (max-width:560px) { .glance th, .glance td { padding:9px 6px; } .glance thead th:first-child { width:19%; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">2026.10.01 – 10.04 · 1인 · 아오모리</p>
+    <h1>끼니 · 날짜별</h1>
+    <p class="lede">날짜마다 아침·점심·저녁에 <b>어디서 무엇을 시키는지</b>만 모았다. 간판과 메뉴판의 일본어가 그대로 적혀 있으니 가리키면 된다. <b>숙소 조식은 3박 모두 요금에 포함</b>이다.</p>
+    <a class="back" href="index.html">← 동선 · 일정으로</a>
+  </header>
+
+  <section class="sec">
+    <div class="sechead"><h2>한눈에</h2><p>누르면 그 끼니로 간다</p></div>
+    <table class="glance">
+      <thead><tr><th></th><th>아침</th><th>점심</th><th>저녁</th></tr></thead>
+      <tbody>
+        <tr class="d1"><th><a href="#d1">10.01<br>목</a></th><td><b>—</b><span>새벽 출발</span></td><td><a href="#m-ramen"><b>오오니시</b><span>미소카레우유라멘</span></a></td><td><a href="#pick-1"><b>당일 선택</b><span>오사나이 · 잇파치스시</span></a></td></tr>
+        <tr class="d2"><th><a href="#d2">10.02<br>금</a></th><td><a href="#d2"><b>숙소 조식</b><span>또는 나가오 7:00</span></a></td><td><a href="#m-soba"><b>키멘안</b><span>스카유 소바</span></a></td><td><a href="#d2-dinner"><b>나가오</b><span>역빌딩 니보시 라멘</span></a></td></tr>
+        <tr class="d3"><th><a href="#d3">10.03<br>토</a></th><td><a href="#m-marron"><b>숙소 조식</b><span>또는 킷사 마론</span></a></td><td><a href="#m-teishoku"><b>니시무라</b><span>쓰가루 정식</span></a></td><td><a href="#pick-3"><b>당일 선택</b><span>잇파치스시 · 니시무라</span></a></td></tr>
+        <tr class="d4"><th><a href="#d4">10.04<br>일</a></th><td><a href="#m-nokke"><b>어채센터</b><span>놋케동</span></a></td><td><b>—</b><span>12:45 귀국편</span></td><td><b>—</b><span>한국</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sec mday d1" id="d1">
+    <h2><span class="dno">DAY 1</span>10.01 목 · 도착 · 산나이마루야마</h2>
+    <p>11:35 착 → 공항 ATM 에서 현금 → 시내 13시대. 점심은 중휴가 없는 집으로 잡았다</p>
+    <div class="meals">
+      <article class="meal d1 lite"><span class="slot">1일차 아침</span><h4>정해 둔 곳 없음</h4><div><span class="order">새벽에 집을 나와 8849 첫차를 탄다. 기내나 공항에서 가볍게 해결한다.</span></div></article>
+      <article class="meal d1" id="m-ramen">
+        <div class="art"><img class="ph" src="img/ramen.jpg" alt="아지노삿포로 오오니시의 미소카레우유라멘" loading="lazy"></div>
+        <span class="slot">1일차 점심</span>
+        <h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E5%91%B3%E3%81%AE%E6%9C%AD%E5%B9%8C%20%E5%A4%A7%E8%A5%BF%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener"><span class="jpn">味の札幌 大西</span></a> <span class="ko">아지노삿포로 오오니시</span></h4>
+        <div><span class="order"><b>味噌カレー牛乳ラーメン</b> (미소카레우유라멘). 아오모리 시민의 소울푸드다. 카레향 된장 국물에 우유와 버터가 들어간다.</span><dl><dt>위치</dt><dd>역 동구 도보 약 7분 · 古川 1초메</dd><dt>시간</dt><dd><b>중휴(中休み)가 없다.</b> 이 동네 대부분이 점심·저녁 사이를 닫는데 여기는 안 닫아서 13시대 도착에 안 걸린다</dd><dt>자리</dt><dd>카운터 9석 포함 33석</dd><dt>주의</dt><dd><b>현금만</b> 받는다는 기재가 있다. 지폐를 들고 갈 것. 정기휴일 표기가 출처마다 갈리지만 10/1(목)은 어느 쪽이어도 영업일이다</dd></dl></div>
+      </article>
+    </div>
+    <div class="pick" id="pick-1">
+        <h4>1일차 저녁 (목) · 둘 중 당일 고른다</h4>
+        <p>산나이마루야마 복귀가 17:00~17:30 · 마감이 이른 집부터 떨어져 나간다</p>
+        <table class="picktable">
+          <thead><tr><th>후보</th><th>역에서</th><th>걸리는 점</th></tr></thead>
+          <tbody>
+            <tr><td><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E9%A3%9F%E4%BA%8B%E5%87%A6%20%E3%81%8A%E3%81%95%E3%81%AA%E3%81%84%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener"><span class="jpn">お食事処 おさない</span></a> <span class="ko">오사나이</span></td>
+              <td class="num">3분</td>
+              <td><b>帆立貝焼き味噌</b> 정식. 테이블 30석(카운터 없음). 저녁 16:00~19:00, 월 휴무. <b>마감 19:00</b> 이라 복귀가 늦으면 자동 탈락</td></tr>
+            <tr><td><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E5%85%AB%E5%AF%BF%E3%81%97%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener"><span class="jpn">一八寿し</span></a> <span class="ko">잇파치스시</span></td>
+              <td class="num">7분</td>
+              <td>1층 카운터 10석. 11:30~14:30, <b>17:00~21:00</b>, 제2·4·5 일요일 휴무. 오사나이보다 두 시간 늦게 닫는다. 메뉴의 <span class="jpn">にぎり 松·竹</span> 세트를 가리키면 된다</td></tr>
+          </tbody>
+        </table>
+      </div>
+    <div class="real"><div class="row"><figure><img class="ph" src="img/kaiyaki.jpg" alt="호타테 카이야키미소" loading="lazy">
+            <figcaption><b>おさない</b>의 간판 — <span class="jpn">帆立貝焼き味噌</span>. 3일차 <span class="jpn">西むら</span> 쓰가루정식에도 같이 나온다</figcaption></figure></div></div>
+  </section>
+
+  <section class="sec mday d2" id="d2">
+    <h2><span class="dno">DAY 2</span>10.02 금 · 핫코다 하이킹</h2>
+    <p><b>산 위에는 식당이 없다.</b> 행동식과 물은 아침에 시내에서 사서 올라간다</p>
+    <div class="meals">
+      <article class="meal d2 lite"><span class="slot">2일차 아침</span><h4>숙소 조식 · 또는 <span class="jpn">長尾中華そば</span> 나가오 츄카소바</h4><div><span class="order">조식은 요금에 포함이다. 첫 미즈우미호가 일러 <b>조식 개시 시각을 체크인 때 확인</b>한다. 못 먹으면 역빌딩 라비나 P1F 나가오(7:00 개점, 쓰가루 니보시 라멘)나 역 앞 편의점으로 간다. <b>행동식·물은 이때 산다.</b></span></div></article>
+      <article class="meal d2" id="m-soba">
+        <div class="art"><img class="ph" src="img/soba.jpg" alt="대나무 발에 담긴 자루소바" loading="lazy"></div>
+        <span class="slot">2일차 점심</span>
+        <h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%85%B8%E3%83%B6%E6%B9%AF%E6%B8%A9%E6%B3%89" target="_blank" rel="noopener"><span class="jpn">鬼面庵</span></a> <span class="ko">키멘안 (스카유)</span></h4>
+        <div><span class="order"><b>酸ヶ湯そば</b> (스카유 소바). 십할(十割)소바를 핫코다 용수로 마감한다.</span><dl><dt>시간</dt><dd>10:00~16:30 (L.O. 16:15)</dd><dt>왜 여기</dt><dd><b>이 날 유일한 실내 식사 지점이다.</b> 산정공원역은 매점만 있고, 정상부에서 하산 2시간 30분 동안 매점도 없다</dd><dt>순서</dt><dd>하산이 12~13시대면 소바 → 입욕 → 귀환 버스가 차례로 들어간다</dd><dt>주의</dt><dd><b>산간이라 현금.</b> 행동식과 물은 아침에 시내에서 사서 올라간다</dd></dl></div>
+      </article>
+      <article class="meal d2 lite" id="d2-dinner"><span class="slot">2일차 저녁</span><h4>시내 귀환 후 · 이동을 늘리지 않는다</h4><div><span class="order">하산 + 입욕 뒤라 역 가까운 곳이 낫다. 귀환 시각이 버스 편에 달려 있어 미리 못 박지 않는다.</span><dl><dt>1순위</dt><dd><b><span class="jpn">長尾中華そば</span> 나가오 츄카소바</b> · 역빌딩 · 21:00 까지</dd><dt>대안</dt><dd>1일차에 못 간 집. 오사나이(19:00 마감) / 잇파치스시(21:00 마감)</dd><dt>안 됨</dt><dd>오오니시는 18:00 마감이라 이 날은 대체로 못 간다</dd></dl></div></article>
+    </div>
+    <div class="real"><div class="row"><figure><img class="ph" src="img/niboshi.jpg" alt="나가오 츄카소바의 니보시 라멘" loading="lazy">
+            <figcaption><b>나가오 츄카소바</b>의 니보시 라멘. 2일차 아침·저녁의 기본값이자 모든 날의 폴백 — 7:00~21:00</figcaption></figure></div></div>
+  </section>
+
+  <section class="sec mday d3" id="d3">
+    <h2><span class="dno">DAY 3</span>10.03 토 · 아오모리 항만</h2>
+    <p>전부 역 도보권. 10:00 체크아웃 → 짐 맡기고 루프 → 아스팜에서 점심. 토요일이라 저녁은 일찍 간다</p>
+    <div class="meals">
+      <article class="meal d3" id="m-marron">
+        <div class="art"><svg class="ic" viewBox="0 0 96 72" role="img" aria-label="킷사텐 모닝 세트. 커피 한 잔, 두껍게 썬 토스트, 삶은 달걀"><ellipse cx="48" cy="62" rx="34" ry="4" fill="var(--sh)"/><path d="M10 30 L44 30 L40 54 Q27 58 14 54 Z" fill="var(--panel)" stroke="var(--ink2)" stroke-width="1.6"/><ellipse cx="27" cy="30" rx="17" ry="4.4" fill="var(--tsuyu)" stroke="var(--ink2)" stroke-width="1.4"/><path d="M44 34 Q54 36 52 42 Q50 47 41 46" fill="none" stroke="var(--ink2)" stroke-width="1.8"/><ellipse cx="27" cy="57" rx="21" ry="4" fill="var(--bowl)" stroke="var(--ink2)" stroke-width="1.4"/><path d="M20 22 Q23 14 26 22 M30 22 Q33 13 36 22" fill="none" stroke="var(--ink3)" stroke-width="1.3" stroke-linecap="round"/><path d="M58 28 L86 28 L86 52 Q72 56 58 52 Z" fill="var(--pastry)" stroke="var(--ink2)" stroke-width="1.6"/><rect x="62" y="32" width="20" height="9" rx="1.5" fill="var(--butter)" stroke="var(--ink2)" stroke-width="1.1"/><ellipse cx="72" cy="63" rx="9" ry="5" fill="var(--rice)" stroke="var(--ink2)" stroke-width="1.3"/></svg></div>
+        <span class="slot">3일차 아침 · 숙소 조식 대신 고를 때 <span class="drawn">· 도해</span></span>
+        <h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E5%96%AB%E8%8C%B6%E3%83%9E%E3%83%AD%E3%83%B3%20%E9%9D%92%E6%A3%AE%E5%B8%82%E5%AE%89%E6%96%B9" target="_blank" rel="noopener"><span class="jpn">喫茶マロン</span></a> <span class="ko">킷사 마론</span></h4>
+        <div><span class="order">모닝 서비스 (7:00~11:00). 1970년에 연 자가배전 킷사텐이다. 간판은 자메이칸 카레인데 카레는 점심 시간대다.</span><dl><dt>위치</dt><dd>역 도보 약 16분 · 安方 2초메 · <b>이 날 코스의 동쪽 끝</b></dd><dt>시간</dt><dd>7:00~17:00 (L.O. 16:40) · 정기휴일 수요일과 매월 셋째 목요일이라 <b>10/3(토)은 영업</b></dd><dt>고민</dt><dd><b>숙소 조식이 이미 요금에 포함이다.</b> 마론은 그걸 버리는 선택이다. 아까우면 숙소에서 먹고 바로 와랏세로 간다</dd></dl></div>
+      </article>
+      <article class="meal d3" id="m-teishoku">
+        <div class="art"><img class="ph" src="img/kaiyaki.jpg" alt="가리비 껍데기에 된장과 계란을 올린 호타테 카이야키미소" loading="lazy"></div>
+        <span class="slot">3일차 점심</span>
+        <h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%9C%8C%E8%A6%B3%E5%85%89%E7%89%A9%E7%94%A3%E9%A4%A8%E3%82%A2%E3%82%B9%E3%83%91%E3%83%A0" target="_blank" rel="noopener"><span class="jpn">みちのく料理 西むら</span></a> <span class="ko">미치노쿠 요리 니시무라 (아스팜 10F)</span></h4>
+        <div><span class="order"><b>津軽定食</b> (쓰가루 정식). <b>帆立貝焼き味噌</b>(가리비 껍데기에 된장과 계란), <b>じゃっぱ汁</b>(대구 잡탕), 가리비 회가 한 상에 나온다.</span><dl><dt>위치</dt><dd><b>아스팜 건물 자체가 3일차 코스에 있어 이동이 0이다</b> (10층)</dd><dt>왜 여기</dt><dd>향토요리를 한 번만 먹는다면 여기가 밀도가 가장 높다</dd><dt>시간</dt><dd>4~10월은 점심과 저녁이 나뉘고 사이가 닫힌다. <b>L.O. 표기가 15:00 / 14:30 으로 갈린다</b></dd><dt>대안</dt><dd>저녁으로 돌려 13층 전망대와 묶으면 무쓰만 일몰이 들어온다. 단 그러면 점심을 다른 데서 해결해야 한다</dd></dl><img class="ph" src="img/jappa.jpg" style="margin-top:11px" alt="대구를 넣고 끓인 잣파지루" loading="lazy"></div>
+      </article>
+    </div>
+    <div class="pick" id="pick-3">
+        <h4>3일차 저녁 (토) · 둘 중 당일 고른다</h4>
+        <p>토요일이라 시내 식당이 가장 밀린다 · 일찍 갈 것</p>
+        <table class="picktable">
+          <thead><tr><th>후보</th><th>성격</th><th>걸리는 점</th></tr></thead>
+          <tbody>
+            <tr><td><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E5%85%AB%E5%AF%BF%E3%81%97%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener"><span class="jpn">一八寿し</span></a> <span class="ko">잇파치스시</span></td>
+              <td>1층 카운터 10석 · <span class="jpn">にぎり 松·竹</span> 세트를 가리킨다</td>
+              <td>스시를 넣는다면 <b>3일차가 유일한 자리</b>다. 4일차는 조식 뒤 바로 공항이다. <b>21:00 에 닫는다</b></td></tr>
+            <tr><td><span class="jpn">西むら</span> <span class="ko">니시무라 (저녁으로)</span></td>
+              <td>쓰가루 정식 + 13층 전망대</td>
+              <td>무쓰만 일몰이 들어온다. 점심을 여기로 잡으면 중복. <b>둘 중 하나만</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+  </section>
+
+  <section class="sec mday d4" id="d4">
+    <h2><span class="dno">DAY 4</span>10.04 일 · 조식 · 귀국</h2>
+    <p>09:50 공항버스 → 12:45 KE2194. 관광은 넣지 않는다</p>
+    <div class="meals">
+      <article class="meal d4" id="m-nokke">
+        <div class="art"><img class="ph" src="img/nokke.jpg" alt="밥 위에 회를 얹어 만든 놋케동" loading="lazy"></div>
+        <span class="slot">4일차 조식</span>
+        <h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E9%AD%9A%E8%8F%9C%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC" target="_blank" rel="noopener"><span class="jpn">青森魚菜センター</span></a> <span class="ko">아오모리 어채센터 (후루카와 시장)</span></h4>
+        <div><span class="order"><b>のっけ丼</b> (놋케동). 식사권을 사서 밥 한 공기를 받고, 시장을 돌며 원하는 회를 <b>한 점씩 얹어</b> 내 덮밥을 만든다.</span><dl><dt>식사권</dt><dd><b>12장 2,200엔.</b> 밥에 한 장, 얹는 것마다 한두 장씩 쓴다</dd><dt>시간</dt><dd>놋케동 제공 7:00~16:00 · <b>7:30~9:00 에 먹는다.</b> 09:50 공항버스가 기다린다</dd><dt>휴일</dt><dd>매주 화요일 휴무라 <b>10/4(일) 영업</b></dd><dt>폴백</dt><dd><b>AUGA</b>(아우가) 지하 신선시장. 역 도보 1분, <b>5:00 개장</b>이라 어느 아침에도 열려 있다. 2026-10 지정휴업일은 10/7 이라 안 겹친다</dd></dl><img class="ph" src="img/nokke-ticket.jpg" style="margin-top:11px" alt="놋케동 식사권. 메뉴마다 몇 장인지 적혀 있다" loading="lazy"></div>
+      </article>
+      <article class="meal d4 lite"><span class="slot">4일차 점심</span><h4>공항에서 먹을 계획은 세우지 않는다</h4><div><span class="order">아오모리공항은 작고 면세점·매점도 작다. 놋케동을 든든히 먹고 간다.</span></div></article>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h2>어느 날이든</h2><p>위 후보가 다 어긋날 때</p></div>
+    <div class="pick" style="border-top-color:var(--ok);">
+        <h4>어긋나면 여기로 <span class="ko" style="font-weight:400;">폴백</span></h4>
+        <p>후보가 다 안 되는 날에도 열려 있다</p>
+        <table class="picktable">
+          <tbody>
+            <tr><td><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%95%B7%E5%B0%BE%E4%B8%AD%E8%8F%AF%E3%81%9D%E3%81%B0%20%E9%9D%92%E6%A3%AE%E9%A7%85%E5%89%8D%E5%BA%97" target="_blank" rel="noopener"><span class="jpn">長尾中華そば 青森駅前店</span></a> <span class="ko">나가오 츄카소바</span></td>
+              <td>역빌딩 라비나 P1F</td>
+              <td><b>7:00 개점 ~ 21:00.</b> 쓰가루 니보시(멸치) 라멘. 실내 이동이라 비에도 안 젖는다. 2일차 아침도 여기가 답이다</td></tr>
+          </tbody>
+        </table>
+      </div>
+    <a class="backup" href="index.html#days">← 날짜별 일정으로</a>
+  </section>
+
+  <footer>
+    가게 시간·휴일은 2026-09-20 ~ 10-01 에 조회한 값이다. 출처가 갈리는 곳은 현장 값이 맞다.
+    단일 출처는 <code>trips/aomori-2026-10/trip.yaml</code> 이고 이 페이지는 사본이다.
+  </footer>
+</div>
+</body>
+</html>

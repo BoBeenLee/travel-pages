@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#EFF0EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121A1F" media="(prefers-color-scheme: dark)">
+<meta name="description" content="아오모리 3박 4일에 사 올 것. 매대에서 찾을 일본어, 날짜별로 들르는 가게, 기내·위탁 판정.">
+<meta property="og:title" content="아오모리 사올 거">
+<meta property="og:description" content="매대에서 찾을 일본어 · 날짜별로 들르는 가게 · 기내/위탁">
+<meta name="robots" content="noindex,nofollow">
+<title>아오모리 사올 거</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --paper:#EFF0EA; --panel:#F7F8F3; --land:#DBDDD2; --sea:#BFCDD6;
+    --ink:#1C2831; --ink2:#5D6C75; --ink3:#8C9AA2; --line:#C8CCC1;
+    --d1:#24707E; --d2:#B4551E; --d3:#486B3D; --d4:#7B6A57; --shuttle:#6E7A80;
+    --ok:#3F6B4A; --tbd:#9A6B1E; --okbg:#E2EAE0; --tbdbg:#F2E8D4;
+    --fs:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+    --fm:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --fj:"Noto Sans JP","Hiragino Sans","Yu Gothic",
+      var(--fs);
+    --buy:#7A4E86; --buybg:#EDE6F0;
+    --sh:rgba(28,40,49,.10);
+    --bowl:#E8E3D8; --broth:#E0B054; --butter:#F2DC8A; --pork:#D9A28A;
+    --menma:#D6C48A; --nori:#2E3B36; --shell:#E2DED2; --miso:#C08A44;
+    --yolk:#EFC75E; --scallop:#F0E0CE; --rice:#F4F1E7; --fish:#E4907F;
+    --roe:#E08A4A; --zaru:#D8CBA8; --soba:#B9A67E; --tsuyu:#6B4A2E;
+    --tray:#B98E63; --pastry:#DFC292; --apple:#E4C56B; --senbei:#E6D6B4;
+    --choco:#6B4A36; --dried:#D7B98C; --glassA:#8FC4CC; --glassB:#E0A24B;
+    --glassC:#C0596B; --squid:#EADCC6; --cheese:#F0D98A;
+  }
+  @media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+      --paper:#121A1F; --panel:#18222A; --land:#1F2A31; --sea:#0C1419;
+      --ink:#E6E9E5; --ink2:#93A2AB; --ink3:#6B7A83; --line:#2C3A43;
+      --d1:#58A9BA; --d2:#E3853F; --d3:#86B276; --d4:#A8977F; --shuttle:#84949C;
+      --ok:#8FBE97; --tbd:#DFB765; --okbg:#1E2E24; --tbdbg:#2E2717;
+      --buy:#C6A2D0; --buybg:#2A2130;
+      --sh:rgba(0,0,0,.34);
+      --bowl:#2E3A42; --broth:#B98A3C; --butter:#C7B267; --pork:#A87766;
+      --menma:#A8996B; --nori:#1A2320; --shell:#39444B; --miso:#95692F;
+      --yolk:#C39C42; --scallop:#BFA88F; --rice:#D9D4C6; --fish:#B56A5C;
+      --roe:#B26A36; --zaru:#8E8360; --soba:#8A7A58; --tsuyu:#4A3320;
+      --tray:#7C5C3E; --pastry:#A6875D; --apple:#B49646; --senbei:#A8966F;
+      --choco:#4A3226; --dried:#9C8360; --glassA:#5E9AA4; --glassB:#B57C33;
+      --glassC:#94414F; --squid:#B3A68F; --cheese:#BCA85F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#121A1F; --panel:#18222A; --land:#1F2A31; --sea:#0C1419;
+    --ink:#E6E9E5; --ink2:#93A2AB; --ink3:#6B7A83; --line:#2C3A43;
+    --d1:#58A9BA; --d2:#E3853F; --d3:#86B276; --d4:#A8977F; --shuttle:#84949C;
+    --ok:#8FBE97; --tbd:#DFB765; --okbg:#1E2E24; --tbdbg:#2E2717;
+      --buy:#C6A2D0; --buybg:#2A2130;
+      --sh:rgba(0,0,0,.34);
+      --bowl:#2E3A42; --broth:#B98A3C; --butter:#C7B267; --pork:#A87766;
+      --menma:#A8996B; --nori:#1A2320; --shell:#39444B; --miso:#95692F;
+      --yolk:#C39C42; --scallop:#BFA88F; --rice:#D9D4C6; --fish:#B56A5C;
+      --roe:#B26A36; --zaru:#8E8360; --soba:#8A7A58; --tsuyu:#4A3320;
+      --tray:#7C5C3E; --pastry:#A6875D; --apple:#B49646; --senbei:#A8966F;
+      --choco:#4A3226; --dried:#9C8360; --glassA:#5E9AA4; --glassB:#B57C33;
+      --glassC:#94414F; --squid:#B3A68F; --cheese:#BCA85F;
+  }
+  * { box-sizing:border-box; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--fs);
+    line-height:1.55; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1240px; margin:0 auto; padding:28px 20px 56px; }
+  .top { display:flex; flex-wrap:wrap; align-items:flex-end; gap:18px 28px;
+    padding-bottom:16px; border-bottom:2px solid var(--ink); }
+  .eyebrow { font-family:var(--fm); font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink2); margin:0 0 4px; }
+  h1 { font-size:clamp(26px,3.6vw,40px); font-weight:700; letter-spacing:-.02em;
+    margin:0; text-wrap:balance; }
+  .facts { display:flex; flex-wrap:wrap; gap:6px 22px; margin-left:auto;
+    font-family:var(--fm); font-size:12.5px; color:var(--ink2); }
+  .facts b { color:var(--ink); font-weight:500; }
+  .grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:26px; margin-top:24px; align-items:start; }
+  @media (max-width:900px) { .grid { grid-template-columns:minmax(0,1fr); } }
+  .mapcard { background:var(--panel); border:1px solid var(--line); padding:14px; }
+  .mapcard + .mapcard { margin-top:22px; }
+  .maphead { display:flex; justify-content:space-between; align-items:baseline;
+    gap:12px; margin:0 0 8px; }
+  .maphead h2, .sechead h2 { font-size:13px; font-weight:600; letter-spacing:.09em;
+    text-transform:uppercase; margin:0; color:var(--ink2); }
+  .scale { font-family:var(--fm); font-size:11px; color:var(--ink3); }
+  svg.map { display:block; width:100%; height:auto; }
+  .mapscroll { overflow-x:auto; }
+  .landbg { fill:var(--land); }
+  .sea { fill:var(--sea); stroke:none; }
+  .admin { stroke:var(--line); stroke-width:1.2; stroke-dasharray:6 4; }
+  .rt { stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; }
+  .rt.d1 { stroke:var(--d1); } .rt.d2 { stroke:var(--d2); }
+  .rt.shuttle { stroke:var(--shuttle); stroke-dasharray:7 5; stroke-width:2.5; }
+  .rt.back { stroke-dasharray:2.5 6; stroke-width:2.6; }
+  .rope { stroke:var(--d2); stroke-width:1.8; stroke-dasharray:3 3; }
+  .hike { stroke:var(--d2); stroke-width:6; stroke-dasharray:.1 9;
+    stroke-linecap:round; }
+  .stop { stroke:var(--panel); stroke-width:2.4; }
+  .stop.hub { fill:var(--ink); } .stop.d1 { fill:var(--d1); }
+  .stop.d2 { fill:var(--d2); } .stop.d3 { fill:var(--d3); }
+  .stop.shuttle { fill:var(--shuttle); }
+  .slab { font-family:var(--fs); font-size:14.5px; font-weight:600; fill:var(--ink); }
+  .selev { font-family:var(--fm); font-size:11.5px; font-weight:400; fill:var(--ink3); }
+  .glab { font-family:var(--fs); font-size:13px; fill:var(--ink3); letter-spacing:.1em; }
+  .hlab { font-family:var(--fm); font-size:12px; fill:var(--d2); font-weight:500; }
+  .legend { display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:12px;
+    padding-top:11px; border-top:1px solid var(--line);
+    font-size:12.5px; color:var(--ink2); }
+  .lg { display:flex; align-items:center; gap:7px; }
+  .sw { width:22px; height:0; border-top-width:3px; border-top-style:solid; }
+  .sw.d1 { border-color:var(--d1); } .sw.d2 { border-color:var(--d2); }
+  .sw.shuttle { border-color:var(--shuttle); border-top-style:dashed; }
+  .sw.hike { border-color:var(--d2); border-top-style:dotted; border-top-width:4px; }
+  .days { display:flex; flex-direction:column; gap:14px; }
+  .day { background:var(--panel); border:1px solid var(--line);
+    border-left:4px solid var(--line); padding:14px 16px; }
+  .day.d1 { border-left-color:var(--d1); } .day.d2 { border-left-color:var(--d2); }
+  .day.d3 { border-left-color:var(--d3); } .day.d4 { border-left-color:var(--d4); }
+  .dh { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .dnum { font-family:var(--fm); font-size:12px; font-weight:600; color:var(--paper);
+    background:var(--ink); width:20px; height:20px; display:grid; place-items:center;
+    align-self:center; }
+  .dmeta { font-family:var(--fm); font-size:13px; color:var(--ink2); }
+  .dmeta b { color:var(--ink); font-weight:600; }
+  .dow { color:var(--ink3); }
+  .dh h3 { font-size:15px; font-weight:600; margin:0; flex:1 1 100%; }
+  .legs { list-style:none; margin:11px 0 0; padding:0; display:flex;
+    flex-direction:column; gap:7px; }
+  .leg { display:grid; grid-template-columns:62px 1fr auto; gap:10px;
+    align-items:baseline; font-size:13.5px; }
+  .lt { font-family:var(--fm); font-size:12px; color:var(--ink3);
+    font-variant-numeric:tabular-nums; }
+  .lw { display:flex; flex-direction:column; gap:1px; min-width:0; }
+  .ln { color:var(--ink); }
+  .lm { font-family:var(--fm); font-size:11.5px; color:var(--ink2); }
+  .pill { font-family:var(--fm); font-size:10.5px; padding:2px 7px;
+    white-space:nowrap; align-self:center; }
+  .pill.ok { color:var(--ok); background:var(--okbg); }
+  .pill.tbd { color:var(--tbd); background:var(--tbdbg); }
+  .dnote { font-size:12.5px; color:var(--ink2); margin:11px 0 0;
+    padding-top:10px; border-top:1px dashed var(--line); }
+  .dstay { font-size:12.5px; margin:8px 0 0; color:var(--ink); }
+  .dstay span { font-family:var(--fm); font-size:10.5px; letter-spacing:.1em;
+    color:var(--ink3); margin-right:8px; text-transform:uppercase; }
+  .sec { margin-top:30px; }
+  .sechead { display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+    border-bottom:1px solid var(--line); padding-bottom:7px; margin-bottom:14px; }
+  .sechead p { margin:0; font-size:12.5px; color:var(--ink3); }
+  .profwrap { background:var(--panel); border:1px solid var(--line);
+    padding:12px; overflow-x:auto; }
+  svg.prof { display:block; width:100%; min-width:620px; height:auto; }
+  .parea { fill:var(--land); opacity:.55; }
+  .ps { stroke-width:2.8; stroke-linecap:round; stroke-linejoin:round; }
+  .ps.d1 { stroke:var(--d1); } .ps.d2 { stroke:var(--d2); }
+  .ps.shuttle { stroke:var(--shuttle); stroke-dasharray:6 4; stroke-width:2; }
+  .ps.rope { stroke:var(--d2); stroke-dasharray:3 3; stroke-width:1.8; }
+  .ps.hike { stroke:var(--d2); stroke-dasharray:.1 8; stroke-width:6;
+    stroke-linecap:round; }
+  .pgrid { stroke:var(--line); stroke-width:1; }
+  .pax { font-family:var(--fm); font-size:10.5px; fill:var(--ink3); }
+  .pdot { fill:var(--panel); stroke:var(--ink2); stroke-width:1.4; }
+  .plab { font-family:var(--fs); font-size:11.5px; fill:var(--ink2); }
+  .risks { display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr));
+    gap:12px; }
+  .risk { border:1px solid var(--line); border-top:3px solid var(--tbd);
+    background:var(--panel); padding:13px 15px; }
+  .risk h4 { font-size:14px; margin:0 0 5px; font-weight:600; }
+  .risk p { margin:0; font-size:12.5px; color:var(--ink2); }
+  .risk .tag { font-family:var(--fm); font-size:10.5px; color:var(--ink3);
+    letter-spacing:.08em; display:block; margin-bottom:6px; }
+  a.pl { color:inherit; text-decoration:underline; text-decoration-style:dotted;
+    text-decoration-color:var(--ink3); text-underline-offset:3px;
+    text-decoration-thickness:1px; }
+  a.pl:focus-visible { color:var(--d1); text-decoration-color:var(--d1);
+    text-decoration-style:solid; }
+  @media (hover:hover) { a.pl:hover { color:var(--d1); text-decoration-color:var(--d1);
+    text-decoration-style:solid; } }
+  a.pl:focus-visible { outline:2px solid var(--d1); outline-offset:2px; }
+  .jpn { font-family:var(--fj); font-weight:500; }
+  .ko { color:var(--ink2); }
+  .leg .ko { font-size:12.5px; }
+  .navline { display:flex; flex-wrap:wrap; gap:8px 14px; margin-top:12px;
+    font-family:var(--fm); font-size:12px; }
+  .navline a { color:var(--d1); text-underline-offset:3px; }
+  .packs { display:grid; grid-template-columns:repeat(auto-fit,minmax(266px,1fr));
+    gap:14px; align-items:start; }
+  .pack { background:var(--panel); border:1px solid var(--line);
+    border-top:3px solid var(--d2); padding:13px 15px; }
+  .pack.must { border-top-color:var(--tbd); }
+  .pack.leave { border-top-color:var(--ink3); }
+  .pack h4 { font-size:13.5px; margin:0 0 3px; font-weight:600; }
+  .pack > p { margin:0 0 10px; font-size:12px; color:var(--ink3); }
+  .pack ul { list-style:none; margin:0; padding:0; display:flex;
+    flex-direction:column; gap:8px; }
+  .pack li { font-size:13px; padding-left:13px; position:relative; text-wrap:pretty; }
+  .pack li::before { content:""; position:absolute; left:0; top:.55em;
+    width:5px; height:5px; background:var(--ink3); }
+  .pack .why { display:block; color:var(--ink2); font-size:12px; margin-top:2px; }
+  .bk { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:14px; }
+  .bkc { background:var(--panel); border:1px solid var(--line);
+    border-left:4px solid var(--d1); padding:14px 16px; }
+  .bkc h4 { font-size:14.5px; margin:0 0 8px; font-weight:600; }
+  .bkc dl { margin:0; display:grid; grid-template-columns:auto 1fr;
+    gap:5px 12px; font-size:12.5px; align-items:baseline; }
+  .bkc dt { font-family:var(--fm); font-size:10.5px; letter-spacing:.08em;
+    color:var(--ink3); text-transform:uppercase; white-space:nowrap; }
+  .bkc dd { margin:0; color:var(--ink); }
+  .bkc .go { display:inline-flex; margin-top:11px; font-family:var(--fm);
+    font-size:12px; color:var(--d1); text-underline-offset:3px; }
+  .bkc .warn { margin:10px 0 0; font-size:12px; color:var(--ink2);
+    padding-top:9px; border-top:1px dashed var(--line); text-wrap:pretty; }
+  /* 항공 · Visit Japan Web — 공항에서 바로 여는 카드 */
+  .fl { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .fl .bkc.vjw { border-left-color:var(--d2); }
+  .fl .when { font-family:var(--fm); font-size:11px; letter-spacing:.1em; color:var(--ink3); margin:0 0 2px; }
+  .fl .rt { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:10px;
+    margin:4px 0 12px; font-family:var(--fm); font-variant-numeric:tabular-nums; }
+  .fl .rt .pt { display:grid; line-height:1.2; }
+  .fl .rt .pt:last-child { text-align:right; }
+  .fl .rt b { font-size:26px; font-weight:600; letter-spacing:-.01em; color:var(--ink); }
+  .fl .rt .ap { font-size:12px; color:var(--ink2); }
+  .fl .rt i { font-style:normal; font-size:11px; color:var(--ink3); text-align:center;
+    border-bottom:1px dashed var(--line); padding-bottom:2px; }
+  .fl .cta { display:flex; align-items:center; justify-content:center; min-height:46px; margin-top:12px;
+    background:var(--d2); color:#fff; font-weight:600; font-size:14px; text-decoration:none; border-radius:6px; }
+  .fl .cta:active { opacity:.85; }
+  .ic { width:100%; max-width:104px; height:auto; display:block; flex:0 0 auto; }
+  .meals { display:flex; flex-direction:column; gap:14px; }
+  .meal { background:var(--panel); border:1px solid var(--line);
+    border-left:4px solid var(--line); padding:14px 16px;
+    display:grid; grid-template-columns:104px minmax(0,1fr); gap:6px 16px;
+    align-items:start; }
+  .meal.d1 { border-left-color:var(--d1); } .meal.d2 { border-left-color:var(--d2); }
+  .meal.d3 { border-left-color:var(--d3); } .meal.d4 { border-left-color:var(--d4); }
+  @media (max-width:560px) { .meal { grid-template-columns:1fr; }
+    .ic { max-width:96px; margin:0 auto 4px; } }
+  .meal .art { grid-row:1 / span 3; }
+  .meal .slot { font-family:var(--fm); font-size:10.5px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink3); }
+  .meal h4 { font-size:15px; margin:2px 0 0; font-weight:600; text-wrap:balance; }
+  .meal .order { display:block; margin-top:7px; font-size:13.5px; }
+  .meal .order b { color:var(--ink); }
+  .meal dl { margin:10px 0 0; display:grid; grid-template-columns:auto 1fr;
+    gap:4px 12px; font-size:12.5px; align-items:baseline; }
+  .meal dt { font-family:var(--fm); font-size:10.5px; letter-spacing:.07em;
+    text-transform:uppercase; color:var(--ink3); white-space:nowrap; }
+  .meal dd { margin:0; color:var(--ink2); }
+  .meal dd b { color:var(--ink); }
+  .pick { background:var(--panel); border:1px solid var(--line);
+    border-top:3px solid var(--tbd); padding:14px 16px; }
+  .pick h4 { font-size:14px; margin:0 0 3px; font-weight:600; }
+  .pick > p { margin:0 0 11px; font-size:12px; color:var(--ink3); }
+  .picktable { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .picktable th, .picktable td { text-align:left; padding:8px 10px 8px 0;
+    border-bottom:1px solid var(--line); vertical-align:top; }
+  .picktable th { font-family:var(--fm); font-size:10px; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink3); font-weight:500; white-space:nowrap; }
+  .picktable td.num { font-family:var(--fm); font-variant-numeric:tabular-nums;
+    white-space:nowrap; }
+  .itemart { display:flex; align-items:center; gap:12px; margin-bottom:9px;
+    padding-bottom:9px; border-bottom:1px dashed var(--line); }
+  .itemart .ic { max-width:70px; }
+  .itemart p { margin:0; font-size:12px; color:var(--ink2); text-wrap:pretty; }
+  .look { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:14px; margin:0 0 20px; }
+  .look figure { margin:0; background:var(--panel); border:1px solid var(--line);
+    padding:12px; display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .look .ic { max-width:88px; }
+  .look figcaption { text-align:center; font-size:12.5px; line-height:1.45; }
+  .look .n { display:block; font-family:var(--fj); font-weight:500;
+    font-size:13.5px; color:var(--ink); }
+  .look .r { display:block; font-family:var(--fm); font-size:10.5px;
+    color:var(--ink3); margin-top:1px; }
+  .look .d { display:block; color:var(--ink2); font-size:11.5px; margin-top:5px;
+    text-wrap:pretty; }
+  .ph { display:block; width:100%; height:auto; border:1px solid var(--line);
+    background:var(--panel); }
+  .meal .art img.ph { aspect-ratio:4/3; object-fit:cover; }
+  .look figure img.ph { aspect-ratio:4/3; object-fit:contain;
+    background:var(--paper); }
+  .spots { display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr)); gap:14px; }
+  .spot { margin:0; background:var(--panel); border:1px solid var(--line); }
+  .spot img.ph { border:0; border-bottom:1px solid var(--line);
+    aspect-ratio:4/3; object-fit:cover; }
+  .spot img.pano { object-fit:contain; background:var(--paper); }
+  .spot figcaption { padding:10px 12px 12px; }
+  .spot .n { display:block; font-family:var(--fj); font-weight:500; font-size:13.5px; }
+  .spot .k { display:block; color:var(--ink2); font-size:12px; margin-top:1px; }
+  .spot .d { display:block; color:var(--ink3); font-size:11.5px; margin-top:6px;
+    font-family:var(--fm); text-wrap:pretty; }
+  .credits { font-size:11.5px; color:var(--ink3); line-height:1.7; text-wrap:pretty; }
+  .credits a { color:var(--ink2); text-underline-offset:2px; }
+  .drawn { font-family:var(--fm); font-size:10px; color:var(--ink3); letter-spacing:.06em; }
+  .part { display:flex; align-items:baseline; gap:12px; margin:40px 0 4px;
+    padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .part h2 { font-size:15px; margin:0; font-weight:700; letter-spacing:-.01em; }
+  .part .no { font-family:var(--fm); font-size:11px; letter-spacing:.14em;
+    color:var(--paper); background:var(--ink); padding:2px 8px; }
+  .part p { margin:0 0 0 auto; font-size:12px; color:var(--ink3);
+    text-align:right; text-wrap:pretty; }
+  .part + .sec { margin-top:20px; }
+  .navline { display:flex; flex-wrap:wrap; gap:6px 0; margin-top:14px;
+    font-family:var(--fm); font-size:12px; align-items:center; }
+  .navline .grp { display:flex; flex-wrap:wrap; gap:6px 13px; align-items:center; }
+  .navline .grp + .grp { margin-inline-start:16px; padding-inline-start:16px;
+    border-inline-start:1px solid var(--line); }
+  .navline .gl { color:var(--ink3); letter-spacing:.1em; font-size:10px; }
+  .daylinks { display:flex; flex-wrap:wrap; gap:6px 14px; margin:11px 0 0;
+    padding-top:10px; border-top:1px dashed var(--line);
+    font-family:var(--fm); font-size:11.5px; align-items:baseline; }
+  .daylinks .gl { color:var(--ink3); letter-spacing:.09em; font-size:10px; }
+  .daylinks a { color:var(--d1); text-underline-offset:3px; }
+  .backup { display:inline-block; margin-top:12px; font-family:var(--fm);
+    font-size:11.5px; color:var(--ink3); text-underline-offset:3px; }
+  .shops { display:grid; grid-template-columns:repeat(auto-fit,minmax(296px,1fr));
+    gap:14px; align-items:start; }
+  .shop { background:var(--panel); border:1px solid var(--line);
+    border-top:3px solid var(--buy); padding:13px 15px; }
+  .shop > header { display:flex; align-items:baseline; gap:6px 10px; flex-wrap:wrap;
+    padding-bottom:9px; margin-bottom:10px; border-bottom:1px solid var(--line); }
+  .shop h4 { font-family:var(--fj); font-size:14.5px; font-weight:500; margin:0; }
+  .shop .at { font-family:var(--fm); font-size:11px; color:var(--ink3);
+    letter-spacing:.06em; margin-left:auto; white-space:nowrap; }
+  .shop .hrs { font-family:var(--fm); font-size:11px; color:var(--ink2);
+    font-variant-numeric:tabular-nums; flex:1 1 100%; }
+  .items { list-style:none; margin:0; padding:0; display:flex;
+    flex-direction:column; gap:10px; }
+  .item { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2px 10px; }
+  .item.withpic { grid-template-columns:minmax(0,1fr) auto 62px; }
+  .item .thumb { grid-row:1 / span 2; grid-column:3; width:62px; height:62px;
+    object-fit:contain; background:var(--paper);
+    border:1px solid var(--line); align-self:start; }
+  .item.withpic .wh { grid-column:1 / 3; }
+  .see { display:inline-flex; align-items:center; gap:4px; margin-top:5px;
+    font-family:var(--fm); font-size:10.5px; color:var(--ink3);
+    text-underline-offset:3px; text-decoration:underline;
+    text-decoration-style:dotted; }
+  .see:focus-visible { color:var(--d1); text-decoration-style:solid; }
+  @media (hover:hover) { .see:hover { color:var(--d1); text-decoration-style:solid; } }
+  .see.shop { color:var(--buy); }
+  .picks-note { margin:14px 0 0; font-size:12px; color:var(--ink3); text-wrap:pretty; }
+  .real { background:var(--panel); border:1px solid var(--line); padding:14px; }
+  .real .row { display:grid; grid-template-columns:repeat(auto-fit,minmax(196px,1fr));
+    gap:16px; align-items:start; }
+  .real figure { margin:0; display:flex; flex-direction:column; }
+  .real figure img { aspect-ratio:4/3; object-fit:contain;
+    background:var(--paper); }
+  .real figcaption { margin-top:8px; font-size:12px; color:var(--ink2); text-wrap:pretty; }
+  .real figcaption b { color:var(--ink); }
+  .item > span:nth-child(2) { display:flex; flex-direction:column; align-items:flex-end;
+    gap:4px; text-align:right; }
+  .jp { font-family:var(--fj); font-size:14.5px; font-weight:500; color:var(--ink);
+    line-height:1.4; }
+  .rd { font-family:var(--fm); font-size:11px; color:var(--ink3);
+    letter-spacing:.03em; }
+  .wh { grid-column:1/-1; font-size:12.5px; color:var(--ink2); text-wrap:pretty; }
+  .yen { font-family:var(--fm); font-size:12.5px; color:var(--ink);
+    font-variant-numeric:tabular-nums; white-space:nowrap; align-self:start; }
+  .yen.na { color:var(--ink3); font-size:11px; }
+  .flag { font-family:var(--fm); font-size:10px; padding:1px 6px;
+    color:var(--tbd); background:var(--tbdbg); white-space:nowrap; }
+  .grandprix { font-family:var(--fm); font-size:10px; padding:1px 6px;
+    color:var(--buy); background:var(--buybg); white-space:nowrap; }
+  .carry { display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr));
+    gap:12px; margin-top:14px; }
+  .carry div { background:var(--panel); border:1px solid var(--line); padding:12px 14px; }
+  .carry h4 { font-size:13px; margin:0 0 6px; font-weight:600; }
+  .carry p { margin:0; font-size:12.5px; color:var(--ink2); text-wrap:pretty; }
+  .carry .tag { font-family:var(--fm); font-size:10.5px; color:var(--ink3);
+    letter-spacing:.08em; display:block; margin-bottom:6px; }
+  footer { margin-top:30px; padding-top:14px; border-top:1px solid var(--line);
+    font-size:12px; color:var(--ink3); }
+  footer code { font-family:var(--fm); font-size:11.5px; color:var(--ink2); }
+  /* 휴대폰(≤640px) — 현장에서 한 손으로 여는 화면. 하단 탭바가 헤더 내비를 대신한다 */
+  .tabbar { display:none; }
+  [id] { scroll-margin-top:12px; }
+  @media (max-width:640px) {
+    .wrap { padding:20px 14px calc(76px + env(safe-area-inset-bottom)); }
+    .top { gap:10px 18px; }
+    .facts { margin-left:0; gap:4px 16px; }
+    .navline { display:none; }
+    .tabbar { display:flex; position:fixed; left:0; right:0; bottom:0; z-index:1;
+      background:var(--panel); border-top:1px solid var(--line);
+      padding:0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+    .tabbar a { flex:1 1 0; display:grid; place-items:center; min-height:50px;
+      font-family:var(--fm); font-size:11.5px; color:var(--ink2); text-decoration:none;
+      -webkit-tap-highlight-color:transparent; }
+    .tabbar a:active { color:var(--d1); background:var(--paper); }
+    .part { flex-wrap:wrap; gap:4px 10px; }
+    .part p { flex:1 1 100%; margin:0; text-align:left; }
+    /* ponytail: 지도는 옆으로 밀어 본다. 라벨을 폰 폭에 맞춰 다시 배치하려면 좌표를 다시 잡아야 한다 */
+    svg.map { min-width:520px; }
+    .slab { font-size:17px; } .selev { font-size:13px; } .hlab { font-size:14px; }
+    .mapcard::after, .profwrap::after { content:"옆으로 밀어 본다 →"; display:block;
+      margin-top:8px; font-family:var(--fm); font-size:10.5px; color:var(--ink3); }
+    .leg { font-size:14.5px; }
+    .leg .ko { font-size:13px; }
+    .lm { font-size:12px; }
+    .dnote, .wh, .risk p, .pack li, .carry p, .meal dd, .picktable, .bkc dl { font-size:13.5px; }
+    .meal .order { font-size:14.5px; }
+    .daylinks { gap:0 6px; font-size:12.5px; }
+    .daylinks a, .backup, .bkc .go { display:inline-flex; align-items:center;
+      min-height:40px; padding:0 4px; }
+    .spots { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .spot figcaption { padding:8px 10px 10px; }
+    .spot .n { font-size:13px; }
+    .picktable thead { display:none; }
+    .picktable tr { display:block; padding:9px 0; border-bottom:1px solid var(--line); }
+    .picktable td { display:block; border:0; padding:0; }
+    .picktable td + td { margin-top:3px; }
+    .picktable td.num::before { content:"역에서 "; font-family:var(--fs); color:var(--ink3); }
+  }
+</style>
+<style>
+  /* 아티팩트 호스트가 주던 기본값을 여기선 직접 깐다 */
+  :root { color-scheme:light dark; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; padding:0; }
+  img { max-width:100%; }
+  [hidden] { display:none !important; }
+  a:focus-visible, [tabindex]:focus-visible {
+    outline:2px solid var(--d1); outline-offset:2px; }
+  @media (prefers-reduced-motion:reduce) {
+    *, *::before, *::after { animation-duration:.01ms !important;
+      transition-duration:.01ms !important; } }
+</style>
+<style>
+  .top { padding-bottom:16px; border-bottom:2px solid var(--ink); display:block; }
+  .lede { margin:10px 0 0; font-size:14.5px; color:var(--ink2); text-wrap:pretty; max-width:62ch; }
+  .back { display:inline-flex; align-items:center; min-height:40px; margin-top:6px; font-family:var(--fm); font-size:12px; color:var(--d1); text-underline-offset:3px; }
+  .glance { width:100%; border-collapse:collapse; font-size:13px; background:var(--panel); border:1px solid var(--line); table-layout:fixed; }
+  .glance th, .glance td { text-align:left; vertical-align:top; padding:10px; border-bottom:1px solid var(--line); }
+  .glance thead th { font-family:var(--fm); font-size:10px; letter-spacing:.08em; color:var(--ink3); font-weight:500; }
+  .glance thead th:first-child { width:17%; }
+  .glance tbody th { font-family:var(--fm); font-size:11.5px; font-weight:600; border-left:4px solid var(--line); }
+  .glance tr.d1 th { border-left-color:var(--d1); } .glance tr.d2 th { border-left-color:var(--d2); }
+  .glance tr.d3 th { border-left-color:var(--d3); } .glance tr.d4 th { border-left-color:var(--d4); }
+  .glance td b { display:block; color:var(--ink); font-weight:600; }
+  .glance td span { display:block; color:var(--ink3); font-size:12px; margin-top:2px; }
+  .glance a { color:inherit; text-decoration:none; }
+  .glance tbody th a { color:var(--ink); }
+  .mday > h2 { font-size:18px; margin:0 0 4px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; text-wrap:balance; }
+  .mday > h2 .dno { font-family:var(--fm); font-size:11px; letter-spacing:.12em; color:#fff; padding:3px 7px; border-radius:3px; }
+  .mday.d1 .dno { background:var(--d1); } .mday.d2 .dno { background:var(--d2); }
+  .mday.d3 .dno { background:var(--d3); } .mday.d4 .dno { background:var(--d4); }
+  .mday > p { margin:0 0 14px; font-size:13px; color:var(--ink3); text-wrap:pretty; }
+  .meal.lite { grid-template-columns:1fr; }
+  .meal.lite .order { color:var(--ink2); }
+  .mday .pick, .mday .real { margin-top:14px; }
+  @media (max-width:560px) { .glance th, .glance td { padding:9px 6px; } .glance thead th:first-child { width:19%; } }
+  .must { background:var(--panel); border:1px solid var(--line); border-top:3px solid var(--buy);
+    padding:16px 16px 14px; }
+  .must .slot { font-family:var(--fm); font-size:10.5px; letter-spacing:.1em; color:var(--buy); }
+  .must .find { font-family:var(--fj); font-weight:700; font-size:clamp(20px,5.2vw,26px); line-height:1.35;
+    margin:6px 0 2px; text-wrap:balance; }
+  .must .rd { font-size:12px; }
+  .must .gist { margin:10px 0 0; font-size:14px; color:var(--ink); text-wrap:pretty; }
+  .must dl { margin:12px 0 0; display:grid; grid-template-columns:auto 1fr; gap:6px 12px;
+    font-size:13px; align-items:baseline; }
+  .must dt { font-family:var(--fm); font-size:10.5px; letter-spacing:.07em; color:var(--ink3); white-space:nowrap; }
+  .must dd { margin:0; color:var(--ink2); text-wrap:pretty; }
+  .must dd b { color:var(--ink); }
+  .must .yen { font-size:13px; }
+  .where { list-style:none; margin:14px 0 0; padding:12px 0 0; border-top:1px dashed var(--line);
+    display:flex; flex-direction:column; gap:9px; }
+  .where li { display:grid; grid-template-columns:52px minmax(0,1fr); gap:10px; align-items:baseline; font-size:13.5px; }
+  .where .dd { font-family:var(--fm); font-size:11px; font-weight:600; color:#fff; padding:2px 0;
+    text-align:center; border-radius:3px; }
+  .where .dd.d1 { background:var(--d1); } .where .dd.d2 { background:var(--d2); }
+  .where .dd.d3 { background:var(--d3); } .where .dd.d4 { background:var(--d4); }
+  .where .ko { font-size:12.5px; }
+  .where small { display:block; color:var(--ink3); font-size:12px; margin-top:1px; }
+  .glance td { font-size:12.5px; }
+  .shopsec + .shopsec { margin-top:22px; }
+  .shopsec > h3 { font-size:14px; margin:0 0 10px; font-weight:600; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; }
+  .shopsec > h3 span { font-family:var(--fm); font-size:11px; font-weight:400; color:var(--ink3); }
+  .skip { margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:12px; }
+  .skip li { background:var(--panel); border:1px solid var(--line); border-top:3px solid var(--tbd); padding:12px 14px; font-size:12.5px; color:var(--ink2); text-wrap:pretty; }
+  .skip li b { color:var(--ink); }
+  /* .see.shop 링크가 .shop 카드 모양을 물려받지 않게 */
+  a.see.shop { background:none; border:0; padding:0; }
+  @media (max-width:640px) { .must dl, .where li { font-size:14px; } .skip li { font-size:13.5px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">2026.10.01 – 10.04 · 1인 · 아오모리</p>
+    <h1>사올 거</h1>
+    <p class="lede">포장에 한국어가 없어서 <b>매대에서 찾을 일본어</b>를 먼저 적었다. 대부분은 역 빌딩 라비나 1층 한 곳에서 끝난다. 가격은 시설·제조사 공식에서만 옮겼고, 빈 칸은 현장 가격표를 본다.</p>
+    <a class="back" href="index.html">← 동선 · 일정으로</a>
+  </header>
+
+  <section class="sec">
+    <div class="sechead"><h2 id="must">꼭 사 올 것</h2><p>부탁받은 것 · 일정 안에서 여러 번 지나간다</p></div>
+    <article class="must" id="ringocha">
+      <span class="slot">부탁받은 것 · 1순위</span>
+      <p class="find">りんごだけでつくった<br>りんご茶</p>
+      <span class="rd">링고다케데 츠쿳타 링고차 · 「사과로만 만든 사과차」</span>
+      <p class="gist">아오모리산 사과의 <b>과육과 껍질만</b> 넣은 티백. 카페인이 없다. <b>빨간 사과가 그려진 흰 봉투</b>에 <b>MACURE</b>(마큐레)라고 적혀 있다.</p>
+      <dl>
+        <dt>양</dt><dd>1봉 티백 5개 (1개 약 7g)</dd>
+        <dt>가격</dt><dd><span class="yen">756엔</span> 제조사 온라인 · <span class="yen">540엔</span> 판매점 안내. 두 값이 달라 <b>매장 가격표가 최종</b></dd>
+        <dt>운반</dt><dd>마른 티백이라 <b>기내 가방에 넣어도 된다</b></dd>
+        <dt>못 찾으면</dt><dd>위 일본어 두 줄을 직원에게 보여 준다</dd>
+      </dl>
+      <ul class="where" aria-label="사과차를 파는 곳, 일정 순서">
+        <li><span class="dd d1">1일차</span><span><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%89%E5%86%85%E4%B8%B8%E5%B1%B1%E9%81%BA%E8%B7%A1" target="_blank" rel="noopener"><span class="jpn">三内丸山遺跡</span></a> <span class="ko">산나이마루야마 유적 매점</span><small>관람하는 김에 들른다</small></span></li>
+        <li><span class="dd d1">1·3일차</span><span><a class="pl" href="https://www.google.com/maps/search/?api=1&query=A-FACTORY%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener"><span class="jpn">A-FACTORY</span></a> <span class="ko">에이팩토리</span><small>역 도보 4분 · 두 날 모두 지나간다</small></span></li>
+        <li><span class="dd d2">2·3일차</span><span><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E9%A7%85%E3%83%93%E3%83%AB%20%E3%83%A9%E3%83%93%E3%83%8A" target="_blank" rel="noopener"><span class="jpn">ラビナ あおもり路</span></a> <span class="ko">라비나 아오모리지</span><small>역 빌딩 · 20:00 까지라 2일차 귀환 뒤에도 열려 있다</small></span></li>
+        <li><span class="dd d3">3일차</span><span><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%9C%8C%E8%A6%B3%E5%85%89%E7%89%A9%E7%94%A3%E9%A4%A8%E3%82%A2%E3%82%B9%E3%83%91%E3%83%A0" target="_blank" rel="noopener"><span class="jpn">アスパム</span></a> <span class="ko">아스팜</span><small>역 도보 12분 · 점심 니시무라와 같은 건물</small></span></li>
+        <li><span class="dd d3">언제든</span><span><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E8%91%9B%E8%A5%BF%E5%95%86%E5%BA%97%20%E9%9D%92%E6%A3%AE%E5%B8%82%E6%96%B0%E7%94%BA" target="_blank" rel="noopener"><span class="jpn">葛西商店</span></a> <span class="ko">카사이 상점</span><small>역 앞 · 숙소와 같은 신마치 1초메</small></span></li>
+        <li><span class="dd d4">4일차</span><span><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener"><span class="jpn">青森空港 売店</span></a> <span class="ko">아오모리공항 매점</span><small>제조사가 판매점으로 적었지만 재고는 모른다. 마지막 기회로만 본다</small></span></li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h2>날짜별로 들르는 곳</h2><p>이미 가는 곳에서 산다 · 쇼핑 때문에 동선을 늘리지 않는다</p></div>
+    <table class="glance">
+      <thead><tr><th></th><th>들르는 곳</th><th>여기서 살 것</th></tr></thead>
+      <tbody>
+        <tr class="d1"><th>10.01<br>목</th><td><a href="#ringocha"><b>산나이마루야마 · A-FACTORY</b><span>관람 뒤 · 역 도보 4분</span></a></td><td><a href="#ringocha"><b>사과차</b><span>보이면 여기서 끝낸다</span></a></td></tr>
+        <tr class="d2"><th>10.02<br>금</th><td><a href="#lovina"><b>라비나 (귀환 후, 선택)</b><span>역 빌딩 · 20:00 까지</span></a></td><td><a href="#lovina"><b>과자 · 겐타레 · 라멘 포장</b><span>지쳤으면 건너뛴다</span></a></td></tr>
+        <tr class="d3"><th>10.03<br>토</th><td><a href="#aspam"><b>와랏세 → 아스팜 → 라비나</b><span>항만 루프 · 쇼핑 본진</span></a></td><td><a href="#aspam"><b>나머지 전부</b><span>깨지는 유리는 마지막에</span></a></td></tr>
+        <tr class="d4"><th>10.04<br>일</th><td><a href="#ringocha"><b>공항 매점</b><span>작다 · 기대하지 않는다</span></a></td><td><a href="#carry"><b>빠뜨린 것만</b><span>액체는 기내 불가</span></a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h2 id="look">생김새</h2><p>매대에서 이 모양을 찾는다 · 「도해」는 사진이 없어 직접 그린 것</p></div>
+    <div class="look">
+      <figure><img class="ph" src="img/kingyo.jpg" alt="금붕어 모양 종이 등롱 금붕어 네부타" loading="lazy"><figcaption><span class="n">金魚ねぶた</span><span class="r">킨교 네부타</span><span class="d">금붕어 모양 종이 등롱. 와랏세 숍에 있다. 가볍고 안 깨진다</span></figcaption></figure>
+      <figure><img class="ph" src="img/ichigoni.jpg" alt="전복과 성게가 든 이치고니" loading="lazy"><figcaption><span class="n">いちご煮</span><span class="r">이치고니</span><span class="d">전복과 성게 국물. 기념품 중엔 비싼 편. 파우치판이 들고 오기 쉽다</span></figcaption></figure>
+      <figure><img class="ph" src="img/tsugarunuri.jpg" alt="츠가루누리 옻칠 그릇" loading="lazy"><figcaption><span class="n">津軽塗</span><span class="r">츠가루누리</span><span class="d">츠가루 옻칠. 부피상 젓가락 정도가 현실적이다</span></figcaption></figure>
+      <figure><img class="ph" src="img/kogin.jpg" alt="코긴자시 자수 소품" loading="lazy"><figcaption><span class="n">こぎん刺し</span><span class="r">코긴자시</span><span class="d">츠가루 전통 자수. 가볍고 안 깨지고 액체가 아니다</span></figcaption></figure>
+      <figure><img class="ph" src="img/senbei.jpg" alt="남부센베이 실물" loading="lazy"><figcaption><span class="n">南部せんべい</span><span class="r">난부 센베이</span><span class="d">초코큐스케의 원형. 이 전병에 초콜릿을 입힌 것이다</span></figcaption></figure>
+      <figure><img class="ph" src="img/kininaru.jpg" alt="반으로 자른 気になるりんご. 사과가 통째로 들어 있다" loading="lazy"><figcaption><span class="n">気になるりんご</span><span class="r">키니나루 링고</span><span class="d">사과 <b>한 개가 통째로</b> 들어 있다. 잘라 먹으면 이 단면이 나온다</span></figcaption></figure>
+      <figure><svg class="ic" viewBox="0 0 96 72" role="img" aria-label="사과 조각이 박힌 막대 모양 파이">
+<ellipse cx="48" cy="60" rx="32" ry="4" fill="var(--sh)"/>
+<rect x="12" y="26" width="72" height="26" rx="5" fill="var(--pastry)" stroke="var(--ink2)" stroke-width="1.6"/>
+<path d="M12 34 L84 34 M12 44 L84 44" stroke="var(--ink3)" stroke-width="1" opacity=".7"/>
+<rect x="22" y="33" width="12" height="12" rx="2" fill="var(--apple)" stroke="var(--ink2)" stroke-width="1"/>
+<rect x="42" y="33" width="12" height="12" rx="2" fill="var(--apple)" stroke="var(--ink2)" stroke-width="1"/>
+<rect x="62" y="33" width="12" height="12" rx="2" fill="var(--apple)" stroke="var(--ink2)" stroke-width="1"/>
+</svg><figcaption><span class="n">りんごスティック</span><span class="r">링고스틱쿠 <span class="drawn">· 도해</span></span><span class="d">막대 모양. 개별 포장이라 나눠 주기 좋다</span></figcaption></figure>
+      <figure><img class="ph" src="img/choco.jpg" alt="남부센베이에 초콜릿을 입힌 초코 큐스케" loading="lazy"><figcaption><span class="n">チョコQ助</span><span class="r">초코 큐스케</span><span class="d">둥근 전병의 반쪽만 초콜릿. <b>품절이 잦다</b></span></figcaption></figure>
+      <figure><svg class="ic" viewBox="0 0 96 72" role="img" aria-label="오징어 사이에 치즈를 끼운 스틱">
+<ellipse cx="48" cy="60" rx="30" ry="4" fill="var(--sh)"/>
+<rect x="14" y="24" width="68" height="9" rx="2.5" fill="var(--squid)" stroke="var(--ink2)" stroke-width="1.4"/>
+<rect x="14" y="33" width="68" height="8" rx="1" fill="var(--cheese)" stroke="var(--ink2)" stroke-width="1.4"/>
+<rect x="14" y="41" width="68" height="9" rx="2.5" fill="var(--squid)" stroke="var(--ink2)" stroke-width="1.4"/>
+<path d="M28 24v9M44 24v9M60 24v9M28 41v9M44 41v9M60 41v9" stroke="var(--ink3)" stroke-width=".9"/>
+</svg><figcaption><span class="n">なかよし</span><span class="r">나카요시 <span class="drawn">· 도해</span></span><span class="d">오징어 사이에 치즈. <b>노멀이 정답</b></span></figcaption></figure>
+      <figure><img class="ph" src="img/scallop.jpg" alt="무쓰만산 가리비" loading="lazy"><figcaption><span class="n">ほたて貝柱</span><span class="r">호타테 카이바시라</span><span class="d">무쓰만산 가리비. 말린 관자로 판다. 조금씩 뜯어 오래 씹는다</span></figcaption></figure>
+      <figure><svg class="ic" viewBox="0 0 96 72" role="img" aria-label="색유리 텀블러">
+<ellipse cx="48" cy="62" rx="20" ry="4" fill="var(--sh)"/>
+<path d="M34 14 L62 14 L58 58 Q48 62 38 58 Z" fill="var(--glassA)" stroke="var(--ink2)" stroke-width="1.6"/>
+<path d="M36 26 L60 26 L59 34 L37 34 Z" fill="var(--glassB)"/>
+<path d="M37 40 L59 40 L58 48 L38 48 Z" fill="var(--glassC)"/>
+<ellipse cx="48" cy="14" rx="14" ry="3.4" fill="none" stroke="var(--ink2)" stroke-width="1.6"/>
+<path d="M40 18 L39 54" stroke="#fff" stroke-width="2.4" opacity=".45" stroke-linecap="round"/>
+</svg><figcaption><span class="n">津軽びいどろ</span><span class="r">츠가루 비드로 <span class="drawn">· 도해</span></span><span class="d">색유리 텀블러 300ml. <b>깨진다</b></span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h2 id="shops">가게별 목록</h2><p>「현 1위」는 2026-09-01 아오모리현 추천기념품 총선거 그랑프리</p></div>
+    <div class="shopsec" id="lovina"><h3>역 빌딩 라비나 · ＆LOVINA <span>역 0분 · 2일차 귀환 후, 3일차</span></h3>
+    <div class="shops">
+        <article class="shop">
+          <header><h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E9%A7%85%E3%83%93%E3%83%AB%20%E3%83%A9%E3%83%93%E3%83%8A" target="_blank" rel="noopener">ふーどぎゃらりー あおのや</a></h4><span class="at">ラビナ 1F</span><span class="hrs">역 빌딩 · 10:00~20:00 · 간식 대부분이 이 한 점포에 있습니다</span></header>
+          <ul class="items">
+          <li class="item"><span class="jp">チョコQ助<br><span class="rd">초코 큐스케</span></span><span><span class="flag">품절잦음</span></span><span class="wh">얇고 둥근 전병에 초콜릿. 완매가 잦아 보이면 그 자리에서 삽니다</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%83%81%E3%83%A7%E3%82%B3Q%E5%8A%A9%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          <li class="item"><span class="jp">なかよし<br><span class="rd">나카요시</span></span><span><span class="yen na">현장가</span></span><span class="wh">오징어에 치즈를 끼운 것. 세 종류인데 노멀이 정답이라는 게 현지 결론</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%81%AA%E3%81%8B%E3%82%88%E3%81%97%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          <li class="item withpic"><span class="jp">スタミナ源たれ<br><span class="rd">스타미나 겐타레</span></span><span><span class="grandprix">현 1위</span></span><span class="wh">고기 양념장. 아오모리 가정의 기본. 塩(시오)판은 야채볶음용</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%82%B9%E3%82%BF%E3%83%9F%E3%83%8A%E6%BA%90%E3%81%9F%E3%82%8C%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a><img class="thumb" src="img/gentare.jpg" alt="스타미나 겐타레 병 실물" loading="lazy"></li>
+          <li class="item"><span class="jp">気になるりんご<br><span class="rd">키니나루 링고</span></span><span><span class="yen">1,400엔</span></span><span class="wh">사과 한 개를 통째로 감싼 파이. 잘라 먹습니다</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E6%B0%97%E3%81%AB%E3%81%AA%E3%82%8B%E3%82%8A%E3%82%93%E3%81%94%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          <li class="item"><span class="jp">パティシエのりんごスティック<br><span class="rd">파티시에노 링고스틱쿠</span></span><span><span class="yen">5본 1,350엔<br>8본 2,160엔</span></span><span class="wh">사과를 큼직하게 썰어 파이로 감싼 막대. 개별 포장</span><a class="see shop" href="https://aspam.jp/item/638/" target="_blank" rel="noopener">아스팜 온라인 상품 페이지 →</a></li>
+          <li class="item"><span class="jp">黒にんにく<br><span class="rd">쿠로닌니쿠</span></span><span><span class="yen">560엔</span></span><span class="wh">흑마늘. 껍질만 까면 그대로 먹습니다. 마늘 냄새가 거의 없습니다</span><a class="see shop" href="https://aspam.jp/item/715/" target="_blank" rel="noopener">아스팜 온라인 상품 페이지 →</a></li>
+          <li class="item"><span class="jp">カリポリ貝ひも<br><span class="rd">카리포리 카이히모</span></span><span><span class="yen na">현장가</span></span><span class="wh">가리비 관자 둘레의 끈을 말린 것</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%82%AB%E3%83%AA%E3%83%9D%E3%83%AA%E8%B2%9D%E3%81%B2%E3%82%82%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          </ul>
+        </article>
+        <article class="shop">
+          <header><h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E9%A7%85%E3%83%93%E3%83%AB%20%E3%83%A9%E3%83%93%E3%83%8A" target="_blank" rel="noopener">KISUKE</a></h4><span class="at">＆LOVINA 1F</span><span class="hrs">역 빌딩 · 공예품</span></header>
+          <ul class="items">
+          <li class="item"><span class="jp">津軽びいどろ<br><span class="rd">츠가루 비드로</span></span><span><span class="flag">입하대기</span><span class="yen">1,980엔</span></span><span class="wh">아오모리 전통 유리. 네부타 텀블러가 300ml</span><a class="see shop" href="https://aspam.jp/item/1766/" target="_blank" rel="noopener">아스팜 온라인 상품 페이지 →</a></li>
+          <li class="item"><span class="jp">津軽塗<br><span class="rd">츠가루누리</span></span><span><span class="yen na">현장가</span></span><span class="wh">츠가루 옻칠. 부피상 젓가락 정도가 현실적입니다</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E6%B4%A5%E8%BB%BD%E5%A1%97%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          </ul>
+        </article>
+        <article class="shop">
+          <header><h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E9%A7%85%E3%83%93%E3%83%AB%20%E3%83%A9%E3%83%93%E3%83%8A" target="_blank" rel="noopener">三ノ月舎</a></h4><span class="at">ラビナ 4F</span><span class="hrs">역 빌딩 · 층이 다릅니다. 따로 올라가야 합니다</span></header>
+          <ul class="items">
+          <li class="item"><span class="jp">こぎん刺し<br><span class="rd">코긴자시</span></span><span><span class="yen na">현장가</span></span><span class="wh">츠가루 전통 자수. 기하학 무늬. 파우치·코스터. 가볍고 안 깨집니다</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%81%93%E3%81%8E%E3%82%93%E5%88%BA%E3%81%97%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          <li class="item"><span class="jp">ひば<br><span class="rd">히바</span></span><span><span class="yen na">현장가</span></span><span class="wh">아오모리 히바 목제품. 2일차 스카유가 히바 천인탕입니다</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%81%B2%E3%81%B0%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          </ul>
+        </article>
+        <article class="shop">
+          <header><h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E9%A7%85%E3%83%93%E3%83%AB%20%E3%83%A9%E3%83%93%E3%83%8A" target="_blank" rel="noopener">龍麵 · 長尾中華そば</a></h4><span class="at">ラビナ 1F</span><span class="hrs">역 빌딩 · 먹어 본 것을 그대로 사 옵니다</span></header>
+          <ul class="items">
+          <li class="item"><span class="jp">味噌カレー牛乳ラーメン<br><span class="rd">미소 카레 규뉴 라멘</span></span><span><span class="yen na">현장가</span></span><span class="wh">1일차 점심에 먹을 그 라멘의 포장판 (龍麵)</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E5%91%B3%E5%99%8C%E3%82%AB%E3%83%AC%E3%83%BC%E7%89%9B%E4%B9%B3%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          <li class="item withpic"><span class="jp">あっさり<br><span class="rd">앗사리</span></span><span><span class="yen na">현장가</span></span><span class="wh">츠가루 멸치 라멘 포장판. 2일차 아침에 가는 나가오 매장</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%81%82%E3%81%A3%E3%81%95%E3%82%8A%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a><img class="thumb" src="img/niboshi.jpg" alt="나가오 츄카소바의 니보시 라멘" loading="lazy"></li>
+          </ul>
+        </article>
+    </div></div>
+    <div class="shopsec" id="aspam"><h3>아스팜 <span>역 도보 12분 · 3일차</span></h3>
+    <div class="shops">
+        <article class="shop">
+          <header><h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%9C%8C%E8%A6%B3%E5%85%89%E7%89%A9%E7%94%A3%E9%A4%A8%E3%82%A2%E3%82%B9%E3%83%91%E3%83%A0" target="_blank" rel="noopener">アスパム物産 · 南部琥珀</a></h4><span class="at">アスパム</span><span class="hrs">역 도보 12분 · 9:00~19:00 (4~10월)</span></header>
+          <ul class="items">
+          <li class="item"><span class="jp">パティシエのりんごスティック ショコラ<br><span class="rd">…쇼콜라</span></span><span><span class="yen na">현장가</span></span><span class="wh">위 막대의 초콜릿판. 아스팜에서만 확인됐습니다. 2026-08 현장 랭킹 1위</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%83%91%E3%83%86%E3%82%A3%E3%82%B7%E3%82%A8%E3%81%AE%E3%82%8A%E3%82%93%E3%81%94%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%20%E3%82%B7%E3%83%A7%E3%82%B3%E3%83%A9%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          <li class="item"><span class="jp">つまんでりんご<br><span class="rd">츠만데 링고</span></span><span><span class="yen na">현장가</span></span><span class="wh">말린 사과에 초콜릿. 덜 답니다</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%81%A4%E3%81%BE%E3%82%93%E3%81%A7%E3%82%8A%E3%82%93%E3%81%94%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          <li class="item"><span class="jp">南部琥珀<br><span class="rd">난부 코하쿠</span></span><span><span class="yen na">현장가</span></span><span class="wh">호박 장신구. 1일차에 가는 산나이마루야마 유적에서 출토된 것이 이 호박입니다</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E5%8D%97%E9%83%A8%E7%90%A5%E7%8F%80%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          </ul>
+        </article>
+        <article class="shop">
+          <header><h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%9C%8C%E8%A6%B3%E5%85%89%E7%89%A9%E7%94%A3%E9%A4%A8%E3%82%A2%E3%82%B9%E3%83%91%E3%83%A0" target="_blank" rel="noopener">JF青森漁連 · JA全農</a></h4><span class="at">アスパム</span><span class="hrs">역 도보 12분 · 9:30~18:30</span></header>
+          <ul class="items">
+          <li class="item"><span class="jp">ほたて貝柱<br><span class="rd">호타테 카이바시라</span></span><span><span class="yen na">현장가</span></span><span class="wh">가리비 관자 말린 것. 조금씩 뜯어 오래 씹는 물건입니다. 6개입</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%81%BB%E3%81%9F%E3%81%A6%E8%B2%9D%E6%9F%B1%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          <li class="item withpic"><span class="jp">ねぶた漬<br><span class="rd">네부타즈케</span></span><span><span class="yen">700엔 / 250g</span></span><span class="wh">청어알·다시마에 무·오이를 간장에 절인 것. 밥 반찬</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%81%AD%E3%81%B6%E3%81%9F%E6%BC%AC%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a><img class="thumb" src="img/nebutazuke.jpg" alt="네부타즈케 실물" loading="lazy"></li>
+          <li class="item"><span class="jp">ホタテカレー<br><span class="rd">호타테 카레</span></span><span><span class="yen">480엔</span></span><span class="wh">무쓰만산 베이비 가리비 카레. 안 맵습니다</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%83%9B%E3%82%BF%E3%83%86%E3%82%AB%E3%83%AC%E3%83%BC%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a></li>
+          <li class="item withpic"><span class="jp">せんべい汁<br><span class="rd">센베이지루</span></span><span><span class="yen">480엔</span></span><span class="wh">전병을 넣고 끓이는 국. 2인분</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E3%81%9B%E3%82%93%E3%81%B9%E3%81%84%E6%B1%81%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a><img class="thumb" src="img/senbeijiru.jpg" alt="전병을 넣고 끓인 센베이지루" loading="lazy"></li>
+          </ul>
+        </article>
+    </div></div>
+    <div class="shopsec" id="warasse"><h3>와랏세 <span>역 도보 4분 · 3일차 첫 지점</span></h3>
+    <div class="shops">
+        <article class="shop">
+          <header><h4><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E3%81%AD%E3%81%B6%E3%81%9F%E3%81%AE%E5%AE%B6%20%E3%83%AF%E3%83%BB%E3%83%A9%E3%83%83%E3%82%BB" target="_blank" rel="noopener">ワ・ラッセ 관내 숍</a></h4><span class="at">ワ・ラッセ</span><span class="hrs">역 도보 4분 · 9:00~18:30 (9~4월) · 3일차 첫 지점</span></header>
+          <ul class="items">
+          <li class="item withpic"><span class="jp">金魚ねぶた<br><span class="rd">킨교 네부타</span></span><span><span class="yen na">현장가</span></span><span class="wh">금붕어 모양 종이 등롱. 네부타 철에 거리에 걸립니다. 종이라 가볍습니다</span><a class="see " href="https://www.google.com/search?tbm=isch&q=%E9%87%91%E9%AD%9A%E3%81%AD%E3%81%B6%E3%81%9F%20%E9%9D%92%E6%A3%AE" target="_blank" rel="noopener">이미지 검색 →</a><img class="thumb" src="img/kingyo.jpg" alt="금붕어 네부타" loading="lazy"></li>
+          </ul>
+        </article>
+    </div></div>
+    <p class="picks-note"><span class="jpn">이미지 검색 →</span> 은 그 일본어 이름으로 구글 이미지를 연다. <span class="jpn" style="color:var(--buy)">아스팜 온라인 상품 페이지 →</span> 가 있는 품목은 우리가 갈 매장의 공식 페이지라 사진과 현재가가 거기가 정확하다. 현장 가격표가 최종이다.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h2>기대를 낮출 것 · 안 사는 것</h2></div>
+    <ul class="skip">
+      <li><b>チョコQ助 (초코 큐스케)</b> 완매가 잦다. 9/1 그랑프리 발표 직후라 수요가 몰려 있다. 라비나 아오노야에서 보이면 그 자리에서 사고, 없으면 미련을 버린다.</li>
+      <li><b>津軽びいどろ 네부타 텀블러</b> 아스팜 온라인이 「入荷待ち」(입하 대기)다. 매장에도 없을 수 있다.</li>
+      <li><b>술 전부 · 1L 유리병 주스</b> 술은 뺐다. 주스는 무게가 곧 손해라 종이팩이나 280ml 페트로.</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h2 id="carry">기내 · 위탁</h2><p>돌아올 때 위탁 23kg 1개 · 기내 10kg</p></div>
+<div class="carry">
+      <div>
+        <span class="tag">기내에 그냥 들어갑니다</span>
+        <h4>고체</h4>
+        <p><b>사과차</b>, 사과 과자 전부, 마늘 계열, 말린 가리비, 코긴자시, 히바, 금붕어 네부타, 호박.</p>
+      </div>
+      <div>
+        <span class="tag">위탁에만 들어갑니다</span>
+        <h4>액체 · 100ml 규정</h4>
+        <p>라멘·카레·국물 계열 전부, 겐타레, 네부타즈케. 공항 면세점은 소규모이고 4일차는 09:50 버스라 「면세점에서 사서 기내로」 경로가 없습니다.</p>
+      </div>
+      <div>
+        <span class="tag">사지 않습니다</span>
+        <h4>生のりんご · 술</h4>
+        <p>생사과는 한국 반입 금지입니다. 식물검역 대상이고 미신고 시 최고 500만원에 폐기. 현지에서 먹는 것으로 끝냅니다. 술은 전부 제외했습니다.</p>
+      </div>
+      <div>
+        <span class="tag">깨집니다</span>
+        <h4>완충재</h4>
+        <p>츠가루비드로만 해당합니다. 옷 사이에 끼우는 것으로 됩니다. 아스팜 왕복 뒤 마지막에 사야 들고 다니는 구간이 줄어듭니다.</p>
+      </div>
+    </div>
+    <a class="backup" href="index.html#days">← 날짜별 일정으로</a>
+  </section>
+
+  <footer>
+    사과차 판매점과 가격은 제조사 마큐레 공식(2026-10-01 조회)이다. 사진은 위키미디어 커먼즈·Flickr 의 자유 라이선스이고 저작자는 <a class="pl" href="index.html#credits">본 페이지 사진 출처</a>에 있다.
+    단일 출처는 <code>trips/aomori-2026-10/checklist.md</code> 축 5 이고 이 페이지는 사본이다.
+  </footer>
+</div>
+</body>
+</html>

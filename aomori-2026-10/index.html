@@ -212,6 +212,21 @@
     font-size:12px; color:var(--d1); text-underline-offset:3px; }
   .bkc .warn { margin:10px 0 0; font-size:12px; color:var(--ink2);
     padding-top:9px; border-top:1px dashed var(--line); text-wrap:pretty; }
+  /* 항공 · Visit Japan Web — 공항에서 바로 여는 카드 */
+  .fl { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .fl .bkc.vjw { border-left-color:var(--d2); }
+  .fl .when { font-family:var(--fm); font-size:11px; letter-spacing:.1em; color:var(--ink3); margin:0 0 2px; }
+  .fl .rt { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:10px;
+    margin:4px 0 12px; font-family:var(--fm); font-variant-numeric:tabular-nums; }
+  .fl .rt .pt { display:grid; line-height:1.2; }
+  .fl .rt .pt:last-child { text-align:right; }
+  .fl .rt b { font-size:26px; font-weight:600; letter-spacing:-.01em; color:var(--ink); }
+  .fl .rt .ap { font-size:12px; color:var(--ink2); }
+  .fl .rt i { font-style:normal; font-size:11px; color:var(--ink3); text-align:center;
+    border-bottom:1px dashed var(--line); padding-bottom:2px; }
+  .fl .cta { display:flex; align-items:center; justify-content:center; min-height:46px; margin-top:12px;
+    background:var(--d2); color:#fff; font-weight:600; font-size:14px; text-decoration:none; border-radius:6px; }
+  .fl .cta:active { opacity:.85; }
   .ic { width:100%; max-width:104px; height:auto; display:block; flex:0 0 auto; }
   .meals { display:flex; flex-direction:column; gap:14px; }
   .meal { background:var(--panel); border:1px solid var(--line);
@@ -421,7 +436,7 @@
       <h1>아오모리 3박 4일 동선도</h1>
     </div>
     <div class="facts">
-      <span>왕복 <b>KE2193 / KE2194</b></span>
+      <span>왕복 <a href="#flight"><b>KE2193 / KE2194</b></a></span>
       <span>총 이동 <b>100.1km</b></span>
       <span>최고 <b>1,314m</b></span>
       <span>하산 <b>429m</b></span>
@@ -430,17 +445,57 @@
 
   <nav class="navline">
     <span class="grp"><span class="gl">출발 전</span>
-      <a href="#book">예약</a><a href="#pack">캐리어</a></span>
+      <a href="#flight">항공·VJW</a><a href="#book">예약</a><a href="#pack">캐리어</a></span>
     <span class="grp"><span class="gl">하루하루</span>
       <a href="#days">날짜별</a><a href="transit.html">버스 타는 법 →</a></span>
     <span class="grp"><span class="gl">현지에서</span>
       <a href="#spots">가는 곳</a><a href="#eat">끼니</a><a href="#buy">기념품</a></span>
   </nav>
   <nav class="tabbar" aria-label="바로 가기">
-    <a href="#book">예약</a><a href="#days">날짜별</a><a href="#spots">가는 곳</a><a href="#eat">끼니</a><a href="#buy">기념품</a><a href="transit.html">버스</a>
+    <a href="#flight">항공</a><a href="#book">예약</a><a href="#days">날짜별</a><a href="#spots">가는 곳</a><a href="#eat">끼니</a><a href="#buy">기념품</a><a href="transit.html">버스</a>
   </nav>
 
-  
+  <section class="sec">
+    <div class="sechead">
+      <h2 id="flight">항공 · 입국</h2>
+      <p>공항에서 이 칸부터 연다 · 시각은 현지 시각 (한국·일본 시차 없음)</p>
+    </div>
+    <div class="fl">
+      <div class="bkc">
+        <p class="when">가는 편 · 10.01 목</p>
+        <h4>KE2193 <span class="ko">대한항공</span></h4>
+        <div class="rt"><span class="pt"><b>09:05</b><span class="ap">ICN 인천</span></span><i>2시간 30분</i><span class="pt"><b>11:35</b><span class="ap">AOJ 아오모리</span></span></div>
+        <dl>
+          <dt>출발</dt><dd>인천공항 <b>제2터미널</b></dd>
+          <dt>카운터 마감</dt><dd><b>08:05</b> (출발 1시간 전)</dd>
+          <dt>도착 후</dt><dd>입국심사 → <b>1층 패밀리마트 유초 ATM</b> → 공항버스</dd>
+        </dl>
+        <a class="go" href="https://www.flightaware.com/live/flight/KAL2193" target="_blank" rel="noopener">KE2193 실시간 운항 (FlightAware) →</a>
+      </div>
+      <div class="bkc vjw">
+        <p class="when">입국심사 · 세관신고</p>
+        <h4>Visit Japan Web <span class="ko">등록 완료 (9/25)</span></h4>
+        <dl>
+          <dt>공항에서</dt><dd>로그인 → 입국심사·세관신고 <b>QR 하나</b>를 본인 폰으로 띄운다</dd>
+          <dt>출발 전</dt><dd>폰에서 한 번 로그인해 QR 이 뜨는지 본다</dd>
+        </dl>
+        <a class="cta" href="https://www.vjw.digital.go.jp/" target="_blank" rel="noopener">Visit Japan Web 열기 →</a>
+        <a class="go" href="https://services.digital.go.jp/ko/visit-japan-web/guide/" target="_blank" rel="noopener">한국어 이용 안내 (디지털청) →</a>
+        <p class="warn"><b>앱이 아니라 이 사이트다.</b> "Visit Japan Web info" 사칭 앱이 있다는 공식 공지가 있다. 무료다.</p>
+      </div>
+      <div class="bkc">
+        <p class="when">오는 편 · 10.04 일</p>
+        <h4>KE2194 <span class="ko">대한항공</span></h4>
+        <div class="rt"><span class="pt"><b>12:45</b><span class="ap">AOJ 아오모리</span></span><i>2시간 45분</i><span class="pt"><b>15:30</b><span class="ap">ICN 인천</span></span></div>
+        <dl>
+          <dt>공항까지</dt><dd>09:50 공항버스 <span class="jpn">青森駅</span> 발 · 약 35분</dd>
+          <dt>도착</dt><dd>인천공항 제2터미널</dd>
+        </dl>
+        <a class="go" href="https://www.flightaware.com/live/flight/KAL2194" target="_blank" rel="noopener">KE2194 실시간 운항 (FlightAware) →</a>
+      </div>
+    </div>
+  </section>
+
   <div class="part"><span class="no">PART 1</span><h2>출발 전에 닫는 것</h2><p>집에서 짐을 쌀 때 본다</p></div>
 <section class="sec">
     <div class="sechead">
@@ -625,6 +680,9 @@
           <h3>도착 · 산나이마루야마</h3>
         </header>
         <ol class="legs">
+        <li class="leg"><span class="lt">09:05</span>
+          <span class="lw"><span class="ln"><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%EC%9D%B8%EC%B2%9C%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD%20%EC%A0%9C2%EC%97%AC%EA%B0%9D%ED%84%B0%EB%AF%B8%EB%84%90" target="_blank" rel="noopener">인천공항 제2터미널</a> 발 → KE2193</span><span class="lm">카운터 마감 08:05 · <a href="#flight">항공·VJW</a></span></span>
+          <span class="pill ok">확정</span></li>
         <li class="leg"><span class="lt">11:35</span>
           <span class="lw"><span class="ln">KE2193 → <a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener"><span class="jpn">青森空港</span></a> <span class="ko">아오모리공항</span></span></span>
           <span class="pill ok">확정</span></li>
@@ -720,6 +778,9 @@
           <span class="pill ok">확정</span></li>
         <li class="leg"><span class="lt">12:45</span>
           <span class="lw"><span class="ln"><a class="pl" href="https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A3%AE%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener"><span class="jpn">青森空港</span></a> <span class="ko">아오모리공항</span> → KE2194 인천</span></span>
+          <span class="pill ok">확정</span></li>
+        <li class="leg"><span class="lt">15:30</span>
+          <span class="lw"><span class="ln">인천공항 제2터미널 도착</span></span>
           <span class="pill ok">확정</span></li>
         </ol>
         <p class="dnote">시장 정기휴일은 화요일이라 10/4(일) 영업. 놋케동 제공 7:00~16:00.</p>

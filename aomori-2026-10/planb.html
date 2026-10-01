@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>아오모리 2일차 플랜 B · 아사무시 바닷가</title>
+<meta property="og:title" content="아오모리 2일차 플랜 B · 아사무시 바닷가">
+<meta property="og:description" content="10/2(금) 등산 대신 아사무시. 기차 20분, 수족관·마구로동·바닷가 산책. 시각·결제·날씨 확인판.">
+<style>
+  :root {
+    --ink: #1c2530;
+    --sub: #5b6672;
+    --line: #e3e7eb;
+    --bg: #f6f8f9;
+    --card: #ffffff;
+    --accent: #0b6e99;
+    --accent-soft: #e6f2f7;
+    --warn: #9a5b00;
+    --warn-soft: #fff4e0;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    word-break: keep-all;
+    padding: 0 0 env(safe-area-inset-bottom);
+  }
+  main { max-width: 560px; margin: 0 auto; padding: 20px 16px 48px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  p, li { text-wrap: pretty; }
+  .jp { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", Pretendard, sans-serif; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  header { padding: 8px 0 20px; }
+  .eyebrow { color: var(--accent); font-weight: 700; font-size: 14px; }
+  h1 { font-size: 26px; line-height: 1.3; margin-top: 4px; }
+  .lead { color: var(--sub); margin: 10px 0 0; }
+
+  section { margin-top: 28px; }
+  h2 { font-size: 19px; margin-bottom: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .card + .card { margin-top: 10px; }
+
+  .decide { background: var(--accent-soft); border-color: transparent; }
+  .decide strong { color: var(--accent); }
+  .decide ul { margin: 8px 0 0; padding-left: 18px; }
+
+  .warn { background: var(--warn-soft); border-color: transparent; }
+  .warn h3 { color: var(--warn); font-size: 16px; }
+  .warn ul { margin: 6px 0 0; padding-left: 18px; }
+
+  ol.tl { list-style: none; margin: 0; padding: 0; }
+  ol.tl > li { display: grid; grid-template-columns: 56px 1fr; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+  ol.tl > li:first-child { border-top: 0; padding-top: 0; }
+  .t { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--accent); }
+  .what h3 { font-size: 17px; }
+  .what .jp { display: block; font-size: 14px; color: var(--sub); margin-top: 2px; }
+  .what p { margin: 6px 0 0; }
+  .what ul { margin: 6px 0 0; padding-left: 18px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .tag { font-size: 13px; padding: 2px 8px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); color: var(--sub); font-variant-numeric: tabular-nums; }
+  .tag.cash { background: var(--warn-soft); border-color: transparent; color: var(--warn); font-weight: 600; }
+  a.map { display: inline-block; margin-top: 8px; color: var(--accent); font-weight: 600; text-decoration: none; font-size: 14px; }
+  a.map::after { content: " →"; }
+
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 8px 4px; border-top: 1px solid var(--line); font-size: 15px; }
+  th { color: var(--sub); font-weight: 600; font-size: 13px; border-top: 0; }
+  td.r, th.r { text-align: right; }
+  tr.sum td { font-weight: 700; }
+
+  .show { display: grid; gap: 8px; }
+  .show .card { padding: 14px 16px; }
+  .show .big { font-size: 24px; font-weight: 700; line-height: 1.35; }
+  .show .say { font-size: 18px; font-weight: 700; color: var(--ink); margin-top: 4px; }
+  .show .ko { color: var(--sub); font-size: 14px; margin-top: 2px; }
+
+  .src { color: var(--sub); font-size: 13px; }
+  .src a { color: var(--sub); }
+  .src ul { padding-left: 18px; margin: 6px 0 0; }
+  .steps { margin: 0; padding-left: 20px; }
+  .steps li + li { margin-top: 6px; }
+  .wx { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; text-align: center; }
+  .wx div { background: var(--bg); border-radius: 10px; padding: 8px 4px; font-size: 14px; }
+  .wx b { display: block; font-size: 16px; }
+  .ok { color: #1f7a3d; font-weight: 600; }
+  .no { color: #b3261e; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="src" style="margin:0 0 6px"><a href="./">← 아오모리 여행 페이지</a></p>
+    <div class="eyebrow num">10/2(금) · 2일차 플랜 B</div>
+    <h1>등산 대신 바닷가 마을, 아사무시</h1>
+    <p class="lead">아오모리역에서 기차로 20분이에요. 수족관, 마구로동, 바닷가 산책으로 하루를 보내요. 온천은 넣지 않았어요.</p>
+  </header>
+
+  <div class="card decide">
+    <strong>아침에 이렇게 정해요</strong>
+    <ul class="num">
+      <li>06:30 숙소 조식 시작(1층 花茶屋, 9:00까지)</li>
+      <li>07:00 로프웨이 공식 홈페이지에서 운행 공지 확인</li>
+      <li>멈췄거나 비·바람이 세면 이 플랜으로 가요. 07:30 버스를 안 타니 조식은 천천히 드셔도 돼요.</li>
+      <li><b>09:10 숙소 출발</b> → 아오모리역 도보 3분</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>내일 날씨 (10/1 오전 예보)</h2>
+    <div class="card">
+      흐리고 가끔 소나기가 와요. <b>오전 9시 전후에 비가 오고, 11~15시는 대체로 개요.</b> 서풍이 초속 8~9m라 바닷가는 바람이 세요. 우산과 바람막이를 챙기세요.
+      <div class="wx num">
+        <div><b>12~15℃</b>최저</div>
+        <div><b>20~22℃</b>최고</div>
+        <div><b>20~50%</b>비 올 확률</div>
+      </div>
+      <p class="src" style="margin:8px 0 0">기상청·tenki.jp·웨더뉴스 예보를 합친 값이에요. 내일 아침에 다시 보세요.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>시간표</h2>
+    <div class="card">
+      <ol class="tl">
+        <li>
+          <div class="t">09:15</div>
+          <div class="what">
+            <h3>아오모리역에서 표 사기</h3>
+            <span class="jp">青い森鉄道 · 浅虫温泉 540円</span>
+            <ul>
+              <li>JR이 아니라 <b>아오이모리 철도</b>예요. 「青い森鉄道」 전용 매표기나 창구(5:20~22:00)에서 「浅虫温泉」 540엔 표를 사요.</li>
+              <li>개찰구는 JR과 같이 써요. <b>Suica를 찍고 들어가면 안 돼요.</b> 아오이모리 철도는 Suica가 안 돼요. 표를 넣고 들어가요.</li>
+              <li>타는 곳은 <b>1·2번선</b>이에요.</li>
+            </ul>
+            <div class="tags"><span class="tag cash">매표기 현금만</span><span class="tag">편도 540엔</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="t">09:29</div>
+          <div class="what">
+            <h3>쾌속 출발 → 09:49 아사무시온센역</h3>
+            <span class="jp">快速 八戸行 · 浅虫温泉駅</span>
+            <p>갈아타지 않아요. 놓치면 <b>10:18</b>(10:39 도착), 10:46(11:06 도착)이 있어요.</p>
+            <p>아사무시온센역은 출구가 하나예요. 출구 옆에 코인로커가 있어요.</p>
+          </div>
+        </li>
+        <li>
+          <div class="t">10:00</div>
+          <div class="what">
+            <h3>아사무시 수족관</h3>
+            <span class="jp">青森県営浅虫水族館</span>
+            <p>역에서 걸어서 약 10분이에요. 무쓰만 바다 생물, 터널 수조, 돌고래가 볼거리예요. 실내라 비가 와도 괜찮아요.</p>
+            <ul>
+              <li><b>평일 돌고래 공연: 10:00 · 11:30 · 13:30 · 15:30</b> (공식 이벤트 달력). <b>11:30</b> 공연을 보고 나오면 점심 시간과 맞아요. 공연은 15~20분이고 자리는 선착순이에요.</li>
+              <li>매표소에서 <b>카드(Visa·Master·JCB)와 Suica가 돼요.</b> 안의 간식 코너는 현금만 받아요.</li>
+              <li>안에 100엔을 돌려주는 코인로커가 있어요.</li>
+              <li>지금 「산호초 물고기」 수조는 쉬고 있어요. 펭귄 산책은 10월 토요일에만 해요.</li>
+            </ul>
+            <div class="tags"><span class="tag">9:00~17:00</span><span class="tag">입장 16:30까지</span><span class="tag">어른 1,200엔</span></div>
+            <a class="map" href="https://www.google.com/maps/dir/?api=1&origin=%E6%B5%85%E8%99%AB%E6%B8%A9%E6%B3%89%E9%A7%85&destination=%E9%9D%92%E6%A3%AE%E7%9C%8C%E5%96%B6%E6%B5%85%E8%99%AB%E6%B0%B4%E6%97%8F%E9%A4%A8&travelmode=walking" target="_blank" rel="noopener">역에서 걷는 길</a>
+          </div>
+        </li>
+        <li>
+          <div class="t">12:00</div>
+          <div class="what">
+            <h3>점심 · 쓰루카메야 식당 마구로동</h3>
+            <span class="jp">鶴亀屋食堂 · マグロ丼</span>
+            <p>참치회를 산처럼 쌓아 주는 집이에요. <b>가장 작은 「ミニ」도 양이 많아요.</b> 메뉴판에서 가리키면 돼요.</p>
+            <ul>
+              <li>블로그에 나온 값은 미니 2,750엔 · 소 3,300엔 · 중 4,400엔이에요. 가게 가격표가 맞아요.</li>
+              <li>정기 휴일은 없지만, 참치가 떨어지면 쉬거나 일찍 닫는 날이 있대요. 걱정되면 전화로 물어보세요(017-752-3385).</li>
+              <li>닫혀 있으면 수족관 간식 코너(현금만)로 가요.</li>
+            </ul>
+            <div class="tags"><span class="tag">11:00~14:30</span><span class="tag">주문 14:00까지</span><span class="tag cash">현금만</span></div>
+            <a class="map" href="https://www.google.com/maps/dir/?api=1&origin=%E9%9D%92%E6%A3%AE%E7%9C%8C%E5%96%B6%E6%B5%85%E8%99%AB%E6%B0%B4%E6%97%8F%E9%A4%A8&destination=%E9%B6%B4%E4%BA%80%E5%B1%8B%E9%A3%9F%E5%A0%82%20%E6%B5%85%E8%99%AB&travelmode=walking" target="_blank" rel="noopener">수족관에서 걷는 길</a>
+          </div>
+        </li>
+        <li>
+          <div class="t">13:00</div>
+          <div class="what">
+            <h3>아사무시 하치만궁 계단 전망</h3>
+            <span class="jp">浅虫八幡宮</span>
+            <p>역에서 걸어서 약 6분이에요. 가파른 돌계단을 오르면 온천 마을과 무쓰만 바다가 내려다보여요. 비가 오면 계단이 미끄러우니 건너뛰세요.</p>
+            <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%85%E8%99%AB%E5%85%AB%E5%B9%A1%E5%AE%AE" target="_blank" rel="noopener">지도</a>
+          </div>
+        </li>
+        <li>
+          <div class="t">13:30</div>
+          <div class="what">
+            <h3>바닷가 산책 · 선셋 비치</h3>
+            <span class="jp">サンセットビーチあさむし · 湯ノ島</span>
+            <p>해안 산책로를 따라 모래 해변까지 걸어요. 바다에 뜬 섬 <b>유노시마(湯ノ島)</b>가 정면으로 보여요.</p>
+            <ul>
+              <li>섬에 가는 배는 봄 축제 때만 다녀요. 10월에는 섬에 못 들어가요.</li>
+              <li>바다 쪽에서 서풍이 바로 불어와요. 파도가 높으면 물가로 내려가지 마세요.</li>
+            </ul>
+            <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88%E3%83%93%E3%83%BC%E3%83%81%E3%81%82%E3%81%95%E3%82%80%E3%81%97" target="_blank" rel="noopener">지도</a>
+          </div>
+        </li>
+        <li>
+          <div class="t">14:00</div>
+          <div class="what">
+            <h3>유사 아사무시 직판장 구경</h3>
+            <span class="jp">道の駅 ゆ〜さ浅虫 · ゆ〜さ市場</span>
+            <p>역에서 육교로 이어진 휴게소예요. 아오모리 채소, 과일, 지역 가공품을 팔아요. 기차 기다리면서 구경하기 좋아요.</p>
+            <div class="tags"><span class="tag">시장 9:00~17:30</span><span class="tag">물품 판매 9:00~19:00</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="t">14:33</div>
+          <div class="what">
+            <h3>아사무시온센역 → 14:56 아오모리역</h3>
+            <span class="jp">浅虫温泉 → 青森</span>
+            <p>이걸 놓치면 다음은 <b>15:45</b>(16:10 도착)예요. 그다음은 16:42, 17:35예요. 아사무시온센역은 직원이 있고 매표기도 있어요. 540엔이에요.</p>
+          </div>
+        </li>
+        <li>
+          <div class="t">저녁</div>
+          <div class="what">
+            <h3>원래 2일차 저녁 그대로</h3>
+            <p>라비나 1층에서 사올 거 사기(~20:00), 저녁은 역빌딩 나가오 츄카소바(21:00까지).</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>계획이 틀어지면</h2>
+    <div class="card">
+      <ul class="steps">
+        <li><b>13시 넘어 비가 오면:</b> 하치만궁과 해변은 빼요. 점심 뒤 직판장만 보고 13:13 쾌속(13:36 도착)이나 14:33으로 돌아와요.</li>
+        <li><b>날이 좋아 더 걷고 싶으면:</b> 수족관 옆 숲 공원의 「무쓰만 전망대」까지 숲길이 있어요(역에서 약 30분). 다만 아오모리현 전역에 곰 경보가 11/30까지 나와 있어서 혼자서는 권하지 않아요.</li>
+        <li><b>기차를 놓치면:</b> 낮에는 기차가 한 시간에 한 대꼴이에요. 역 앞에서 기다리지 말고 직판장에서 기다려요.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>현금 준비</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>항목</th><th>결제</th><th class="r">엔</th></tr></thead>
+        <tbody>
+          <tr><td>기차 왕복</td><td>현금</td><td class="r">1,080</td></tr>
+          <tr><td>마구로동 (미니)</td><td>현금</td><td class="r">2,750</td></tr>
+          <tr><td>수족관</td><td>카드·Suica 됨</td><td class="r">1,200</td></tr>
+          <tr class="sum"><td>합계</td><td></td><td class="r">5,030</td></tr>
+        </tbody>
+      </table>
+      <p style="margin:10px 0 0;color:var(--sub);font-size:14px">현금으로 낼 돈은 3,830엔이에요. 매표기에 1만 엔권이 들어간다는 안내가 있지만 직접 확인하지는 못했어요. <b>1,000엔 지폐 5장</b>을 챙기세요. 수족관 할인 세트표는 2025년 3월에 판매가 끝났어요.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>말하거나 보여 줄 일본어</h2>
+    <div class="show">
+      <div class="card"><div class="big jp">浅虫温泉まで 1枚</div><div class="say">아사무시 온센마데 이치마이</div><div class="ko">아사무시온센까지 1장 · 아오모리역 창구</div></div>
+      <div class="card"><div class="big jp">マグロ丼 ミニ ひとつ</div><div class="say">마구로동 미니 히토츠</div><div class="ko">마구로동 미니 하나 주세요 · 쓰루카메야</div></div>
+      <div class="card"><div class="big jp">青森行きですか？</div><div class="say">아오모리 유키데스카?</div><div class="ko">아오모리 가는 거예요? · 돌아오는 기차 탈 때</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card warn">
+      <h3>원래 플랜과 달라지는 것</h3>
+      <ul>
+        <li>핫코다 단풍과 습원 하이킹이 빠져요.</li>
+        <li>미즈우미호 버스(1,290엔 + 1,570엔)를 안 타요. 스카유 소바도 빠져요.</li>
+        <li>3일차 항구 쪽(와랏세, A-FACTORY, 아스팜)과 겹치지 않아요.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="src">
+    <strong>확인한 곳 (2026-10-01 조회)</strong>
+    <ul>
+      <li><a href="https://asamushi-aqua.com/event-calendar" target="_blank" rel="noopener">수족관 이벤트 달력(공연 시각)</a> · <a href="https://asamushi-aqua.com/userguide/fee" target="_blank" rel="noopener">요금</a> · <a href="https://asamushi-aqua.com/method-of-payment" target="_blank" rel="noopener">결제 수단</a> · <a href="https://asamushi-aqua.com/userguide/various-discounts" target="_blank" rel="noopener">할인(세트표 종료)</a></li>
+      <li><a href="https://www.navitime.co.jp/diagram/depArrTimeList?departure=00004975&arrival=00005272&line=00001186&updown=0" target="_blank" rel="noopener">NAVITIME 가는 기차</a> · <a href="https://www.navitime.co.jp/diagram/depArrTimeList?departure=00005272&arrival=00004975&line=00001186&updown=1" target="_blank" rel="noopener">오는 기차</a></li>
+      <li><a href="https://www.city.aomori.aomori.jp/shisetsu/1005707/1005717.html" target="_blank" rel="noopener">아오모리시 · 유사 아사무시</a> · <a href="https://www.city.aomori.aomori.jp/shisetsu/1005691/1005694.html" target="_blank" rel="noopener">숲 공원</a></li>
+      <li><a href="https://rurubu.jp/andmore/spot/80001976" target="_blank" rel="noopener">루루부 · 쓰루카메야</a> · <a href="https://locoty-aomori.com/2024/10/01/asamushi-maguro" target="_blank" rel="noopener">가격·현금 (블로그)</a></li>
+      <li><a href="https://www.route-inn.co.jp/hotel_list/aomori/index_hotel_id_65/restaurant/" target="_blank" rel="noopener">숙소 조식 시간</a> · <a href="https://tenki.jp/forecast/2/5/3110/2201/1hour.html" target="_blank" rel="noopener">tenki.jp 시간별 예보</a> · <a href="https://kumalog-aomori.info/" target="_blank" rel="noopener">くまログあおもり</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
